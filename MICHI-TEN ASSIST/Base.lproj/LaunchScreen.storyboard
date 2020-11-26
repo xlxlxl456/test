@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hC1-46-9Uh">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="seN-yR-t6T">
+            <objects>
+                <viewController id="hC1-46-9Uh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T8u-UD-1Vk">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group_logo" translatesAutoresizingMaskIntoConstraints="NO" id="4Vr-ri-7uA">
+                                <rect key="frame" x="207" y="82" width="200" height="66.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="XJa-g8-9Ix"/>
+                                    <constraint firstAttribute="width" secondItem="4Vr-ri-7uA" secondAttribute="height" multiplier="455:151" id="ilW-EV-Ses"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="wSa-6t-h0w">
+                                <rect key="frame" x="307" y="261.5" width="410" height="245"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Gys-y3-y78">
+                                        <rect key="frame" x="0.0" y="0.0" width="410" height="135.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Gys-y3-y78" secondAttribute="height" multiplier="2267:749" id="FLR-Kt-Nce"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-QO-edT">
+                                        <rect key="frame" x="49" y="167.5" width="312.5" height="77.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hs-5E-hta">
+                                                <rect key="frame" x="154" y="0.0" width="4.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2019-2020 Furukawa Electric Co., Ltd." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0F-11-loI">
+                                                <rect key="frame" x="0.0" y="28.5" width="312.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All rights reserved." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwu-ow-wko">
+                                                <rect key="frame" x="84.5" y="57" width="143" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wSa-6t-h0w" firstAttribute="centerY" secondItem="WrC-qR-Mrr" secondAttribute="centerY" id="CzH-e1-VsD"/>
+                            <constraint firstItem="wSa-6t-h0w" firstAttribute="centerX" secondItem="WrC-qR-Mrr" secondAttribute="centerX" id="JLa-7o-Ybb"/>
+                            <constraint firstItem="4Vr-ri-7uA" firstAttribute="centerX" secondItem="Gys-y3-y78" secondAttribute="leading" id="WY2-T3-uMz"/>
+                            <constraint firstItem="4Vr-ri-7uA" firstAttribute="centerY" secondItem="WrC-qR-Mrr" secondAttribute="centerY" multiplier="0.3" id="hcc-ep-ON7"/>
+                            <constraint firstItem="Gys-y3-y78" firstAttribute="width" secondItem="WrC-qR-Mrr" secondAttribute="width" multiplier="2:5" id="lDp-7K-uHd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WrC-qR-Mrr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oxs-nF-aUY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="332"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="group_logo" width="455" height="151"/>
+        <image name="logo" width="2267" height="749"/>
+    </resources>
+</document>
