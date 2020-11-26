@@ -146,8 +146,6 @@ final class NewFacilityViewController: UITableViewController {
         } else {
             dismiss(animated: true)
         }
-
-        
     }
     
     @IBAction func inputDidChange(_ sender: UITextField) {
