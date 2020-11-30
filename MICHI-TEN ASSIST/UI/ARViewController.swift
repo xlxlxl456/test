@@ -160,7 +160,7 @@ extension ARViewController {
     
     private func checkExpiration() -> Bool {
         if guestMode { return true }
-        //        アクティベーションを無効にする
+        //    xinglang    体験版でアクティベーションを無効にする
         
          if let expiration = DataManager.expiration, expiration >= Date() {
             return true

@@ -52,7 +52,7 @@
 		DA3BCA8324C144E900462E59 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
 		DA409B6824DA878A008D4617 /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
 		DA4D113024BB6E560031D45A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		DA78E4F8249600CA005EC93A /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA78E4F8249600CA005EC93A /* みちてんアシスト.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "みちてんアシスト.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA78E4FB249600CA005EC93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA78E501249600CB005EC93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA78E504249600CB005EC93A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		DA78E4F9249600CA005EC93A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA78E4F8249600CA005EC93A /* .app */,
+				DA78E4F8249600CA005EC93A /* みちてんアシスト.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,7 +222,7 @@
 			);
 			name = "MICHI-TEN ASSIST";
 			productName = "MICHI-TEN ASSIST";
-			productReference = DA78E4F8249600CA005EC93A /* .app */;
+			productReference = DA78E4F8249600CA005EC93A /* みちてんアシスト.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -463,6 +463,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.13.200930;
+				PRODUCT_NAME = "みちてんアシスト";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -483,6 +484,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.13.200930;
+				PRODUCT_NAME = "みちてんアシスト";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
