@@ -41,6 +41,15 @@ final class ActivationViewController: UITableViewController {
         button.alpha = button.isEnabled ? 1 : 0.5
     }
     
+//    xinglang 2020/11/25 体験版ボタン　start
+    @IBAction func guestStart(_ sender: Any) {
+        guestMode = true
+        DataManager.setupGuest()
+        (UIApplication.shared.delegate as? AppDelegate)?
+        .transitionRootViewController(storyboardIdentifier: "ARViewController")
+    }
+//    xinglang 2020/11/25 体験版ボタン　end
+    
     @IBAction func activate(_ sender: Any) {
         activate()
     }

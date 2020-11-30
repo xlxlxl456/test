@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78FD26C9256FAABE0071FAF2 /* Guest in Resources */ = {isa = PBXBuildFile; fileRef = 78FD26C8256FAABE0071FAF2 /* Guest */; };
 		DA23513824A37EB600AD7704 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23513724A37EB600AD7704 /* ARViewController.swift */; };
 		DA23513C24A384C800AD7704 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23513B24A384C800AD7704 /* SplashViewController.swift */; };
 		DA3BCA8424C144E900462E59 /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3BCA8324C144E900462E59 /* Facility.swift */; };
@@ -45,12 +46,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78FD26C8256FAABE0071FAF2 /* Guest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Guest; sourceTree = "<group>"; };
 		DA23513724A37EB600AD7704 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		DA23513B24A384C800AD7704 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DA3BCA8324C144E900462E59 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
 		DA409B6824DA878A008D4617 /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
 		DA4D113024BB6E560031D45A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		DA78E4F8249600CA005EC93A /* みちてんアシスト.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "みちてんアシスト.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA78E4F8249600CA005EC93A /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA78E4FB249600CA005EC93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA78E501249600CB005EC93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA78E504249600CB005EC93A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 		DA78E4F9249600CA005EC93A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA78E4F8249600CA005EC93A /* みちてんアシスト.app */,
+				DA78E4F8249600CA005EC93A /* .app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +116,7 @@
 		DA78E4FA249600CA005EC93A /* MICHI-TEN ASSIST */ = {
 			isa = PBXGroup;
 			children = (
+				78FD26C8256FAABE0071FAF2 /* Guest */,
 				DACFFB3C24BF6F3B00330BED /* WebPage */,
 				DAEF407E249A735D00C645FD /* Extension */,
 				DA78E53224960D44005EC93A /* Model */,
@@ -219,7 +222,7 @@
 			);
 			name = "MICHI-TEN ASSIST";
 			productName = "MICHI-TEN ASSIST";
-			productReference = DA78E4F8249600CA005EC93A /* みちてんアシスト.app */;
+			productReference = DA78E4F8249600CA005EC93A /* .app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -263,6 +266,7 @@
 				DA78E508249600CB005EC93A /* LaunchScreen.storyboard in Resources */,
 				DA78E505249600CB005EC93A /* Preview Assets.xcassets in Resources */,
 				DACFFB3D24BF6F3C00330BED /* WebPage in Resources */,
+				78FD26C9256FAABE0071FAF2 /* Guest in Resources */,
 				DA78E502249600CB005EC93A /* Assets.xcassets in Resources */,
 				DAB7C22324A25B680034D447 /* Main.storyboard in Resources */,
 			);
@@ -459,9 +463,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.13.200930;
-				PRODUCT_NAME = "みちてんアシスト";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -480,9 +483,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.13.200930;
-				PRODUCT_NAME = "みちてんアシスト";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

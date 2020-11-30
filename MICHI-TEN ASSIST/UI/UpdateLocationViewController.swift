@@ -81,8 +81,9 @@ extension UpdateLocationViewController: CLLocationManagerDelegate {
 }
 
 extension UpdateLocationViewController {
-    static func updateFacility(serialNumber: String?, viewController: UIViewController, showConfirm: Bool = false, completion: ((CLLocation?) -> Void)? = nil) {
-        self.show(from: viewController) { [weak viewController] location in
+//   xinglang 2020//11/20 withSkipを追加して、新規する時alertにskipがある start
+    static func updateFacility(serialNumber: String?, viewController: UIViewController, showConfirm: Bool = false,withSkip: Bool = false, completion: ((CLLocation?) -> Void)? = nil) {
+        self.show(from: viewController,withSkip: withSkip) { [weak viewController] location in
             guard let location = location else {
                 completion?(nil)
                 return
@@ -117,7 +118,7 @@ extension UpdateLocationViewController {
         }
     }
     
-    private static func show(from viewController: UIViewController, completion: @escaping (CLLocation?) -> Void) {
+    private static func show(from viewController: UIViewController,withSkip: Bool, completion: @escaping (CLLocation?) -> Void) {
         let alert = UpdateLocationViewController(title: "GPSの補正を行っています。\nアンテナの位置を変えないでください。",
                                             message: "\n0%\n\n\n",
                                             preferredStyle: .alert)
@@ -127,8 +128,29 @@ extension UpdateLocationViewController {
             alert?.completion?(nil)
         }))
         
+//            xinglang 2020/11/27 GPSが取得していない時スキップはクリックできない　start
+        if withSkip {
+            let action = UIAlertAction(title: "スキップ", style: .default, handler: { [weak alert] _ in
+                alert?.locationManager.stopUpdatingLocation()
+                let location = alert?.locations.last
+                alert?.completion?(location)
+            })
+            alert.addAction(action)
+            action.isEnabled = false
+            DispatchQueue.main.async {
+                Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (Timer) in
+                    if alert.locations.first != nil{
+                        action.isEnabled = true
+                        Timer.invalidate()
+                    }
+                }
+            }
+        }
+//            xinglang 2020/11/27 GPSが取得していない時スキップはクリックできない　end
+        
         viewController.present(alert, animated: true) { [weak alert]  in
             alert?.updateLocation()
         }
     }
+//   xinglang 2020//11/20 withSkipを追加して、新規する時alertにskipがある end
 }
