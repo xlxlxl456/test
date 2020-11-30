@@ -74,14 +74,12 @@ final class ARViewController: UIViewController {
     }
     
     @IBAction private func newFacility(_ sender: Any) {
-//       xinglang 2020/11/20 新規する時スキップできるように　start
-        UpdateLocationViewController.updateFacility(serialNumber: nil, viewController: self,withSkip: true) { [weak self] location in
+        UpdateLocationViewController.updateFacility(serialNumber: nil, viewController: self) { [weak self] location in
             guard let self = self, let location = location else {
                 return
             }
             self.performSegue(withIdentifier: "newFacility", sender: location)
         }
-//       xinglang 2020/11/20 新規する時スキップできるように　start
     }
 }
 
@@ -148,20 +146,10 @@ extension ARViewController {
     private func showReminder() {
         if tipDisplayed { return }
         tipDisplayed = true
-        
-//        xinglang 2020/11/25 Guest場合は別の提示する　start
-        if guestMode{
-            showAlert(title:"確認", message: "アクティベーションを完了しない場合は、保存したデータをPCソフトで読込が出来ません。")
-        }else{
-            showAlert(title:"確認", message: "デジカメとタブレットの時刻が合っている（補正値入力済みである）ことを確認してから、点検を開始して下さい。")
-        }
-//        xinglang 2020/11/25 Guest場合は別の提示する　end
+        showAlert(title:"確認", message: "デジカメとタブレットの時刻が合っている（補正値入力済みである）ことを確認してから、点検を開始して下さい。")
     }
     
     private func checkExpiration() -> Bool {
-        if guestMode { return true }
-        //    xinglang    体験版でアクティベーションを無効にする
-        
          if let expiration = DataManager.expiration, expiration >= Date() {
             return true
         }
