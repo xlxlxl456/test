@@ -90,6 +90,14 @@ final class FacilityListViewController: UITableViewController {
     }
     
     @IBAction private func sort(_ sender: SortButton) {
+        
+//     xinglang 2020/11/20   一覧表示、ソートしている項目を太字にする start
+        header?.sortButtons.forEach({ (SortButton) in
+            SortButton.titleLabel?.font = UIFont.systemFont(ofSize: (sender.titleLabel?.font.pointSize)!)
+        })
+        sender.titleLabel?.font = UIFont.boldSystemFont(ofSize: (sender.titleLabel?.font.pointSize)!)
+//     xinglang 2020/11/20   一覧表示、ソートしている項目を太字にする end
+        
         guard let sort = Sort(rawValue: sender.index) else {
             return
         }

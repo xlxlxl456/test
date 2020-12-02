@@ -49,7 +49,9 @@ extension SplashViewController {
     private func checkLocation() {
         ARManager.shared.authorizeLocation { [weak self] authorized in
             if authorized {
-                self?.checkData()
+//    xinglang 2020/11/25 フォルダの確認をアクティベーションの後にする　start
+                self?.checkExpiration()
+//    xinglang 2020/11/25 フォルダの確認をアクティベーションの後にする　end
             } else {
                 self?.showSetting("位置情報")
             }
@@ -58,10 +60,12 @@ extension SplashViewController {
     
     private func checkData() {
         if DataManager.dataExsits {
-            if checkExpiration() {
+//    xinglang 2020/11/25 フォルダの確認をアクティベーションの後にする　start
+//            if checkExpiration() {
+//    xinglang 2020/11/25 フォルダの確認をアクティベーションの後にする　end
                 (UIApplication.shared.delegate as? AppDelegate)?
                     .transitionRootViewController(storyboardIdentifier: "ARViewController")
-            }
+//            }
             return
         }
         showAlert(title: "確認",
@@ -72,17 +76,22 @@ extension SplashViewController {
         })
     }
     
-    private func checkExpiration() -> Bool {
+    private func checkExpiration(){
         if let expiration = DataManager.expiration {
-            if expiration > Date() { return true }
+            if expiration > Date() {
+//    xinglang 2020/11/25 フォルダの確認をアクティベーションの後にする、Guestフォルダを削除　start
+                DataManager.deleteGuest()
+                self.checkData()
+//    xinglang 2020/11/25 フォルダの確認をアクティベーションの後にする、Guestフォルダを削除　end
+            }
             
             showAlert(title: "確認", message: "有効期限が切れています。") { [weak self] in
                 DataManager.deleteExpiration()
                 self?.performSegue(withIdentifier: "activation", sender: nil)
             }
-            return false
+            return
         }
         performSegue(withIdentifier: "activation", sender: nil)
-        return false
+        return
     }
 }
