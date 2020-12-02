@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="boT-eZ-BQh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="boT-eZ-BQh">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -353,7 +353,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTj-XT-8tM">
-                                                    <rect key="frame" x="390" y="64" width="101" height="38"/>
+                                                    <rect key="frame" x="461.5" y="64" width="101" height="38"/>
                                                     <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="38" id="pm4-5f-xSR"/>
@@ -372,33 +372,10 @@
                                                         <action selector="activate:" destination="Q85-AG-jCP" eventType="touchUpInside" id="l2u-p2-ylf"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNC-6f-mkE">
-                                                    <rect key="frame" x="532" y="64" width="101" height="38"/>
-                                                    <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="101" id="7tQ-JX-uc2"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <state key="normal" title="体験版">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="8"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="guestStart:" destination="Q85-AG-jCP" eventType="touchUpInside" id="tjR-at-e5z"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="HTj-XT-8tM" firstAttribute="baseline" secondItem="TNC-6f-mkE" secondAttribute="baseline" id="YMB-Br-91g"/>
-                                                <constraint firstItem="HTj-XT-8tM" firstAttribute="top" secondItem="TNC-6f-mkE" secondAttribute="top" id="YuM-zK-07Z"/>
-                                                <constraint firstItem="HTj-XT-8tM" firstAttribute="leading" secondItem="2xc-qR-Gdz" secondAttribute="leading" constant="390" id="mPa-IB-tdA"/>
-                                                <constraint firstItem="HTj-XT-8tM" firstAttribute="firstBaseline" secondItem="TNC-6f-mkE" secondAttribute="firstBaseline" id="mry-JV-iw6"/>
+                                                <constraint firstItem="HTj-XT-8tM" firstAttribute="centerX" secondItem="2xc-qR-Gdz" secondAttribute="centerX" id="n2d-Zb-m4q"/>
                                                 <constraint firstItem="HTj-XT-8tM" firstAttribute="top" secondItem="2xc-qR-Gdz" secondAttribute="top" constant="64" id="q1J-bj-m9J"/>
-                                                <constraint firstItem="TNC-6f-mkE" firstAttribute="leading" secondItem="HTj-XT-8tM" secondAttribute="trailing" constant="41" id="w4H-i4-TQg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

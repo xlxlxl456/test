@@ -261,30 +261,13 @@ function loadCurrentInspectionData() {
         }
     });
     var jsonInspectionDetails = jsonInspectionFull["InspectionDetails"];
-// xinglang 2020/11/25 点検結果票その他空白を1行残す　start
-    var flag = false;
-// xinglang 2020/11/25 点検結果票その他空白を1行残す　end
-    
+
     $(".DetailRow").each(function () {
         var LineNumber = $(this).attr("LineNumber");
         var oInspectionDetail = null;
         for (var i = 0 ; i < jsonInspectionDetails.length ; i++) {
             if (jsonInspectionDetails[i].LineNumber == LineNumber) {
                 oInspectionDetail = jsonInspectionDetails[i];
-// xinglang 2020/11/25 点検結果票その他空白を1行残す　start
-                if(i>=31 && i<=33){
-                    if(jsonInspectionDetails[i].InspectionPoint == ""){
-                        if(flag){
-                            $(this).hide();
-                        }
-                        else{
-                            $(this).find(".lws-C2").removeClass("FEC-ItemColNB");
-                            $(this).find(".lws-CInsParts").removeClass("FEC-ItemColNB");
-                            flag = true;
-                        }
-                    }
-                }
-// xinglang 2020/11/25 点検結果票その他空白を1行残す　end
                 break;
             }
         }

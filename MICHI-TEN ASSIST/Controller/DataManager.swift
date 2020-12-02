@@ -10,16 +10,9 @@ import UIKit
 import CoreLocation
 
 struct DataManager {
-//    xinglang 2020/11/25 アクティベーションを使うかの判断 start
-    static var guestMode:       Bool = false
-//    xinglang 2020/11/25 アクティベーションを使うかの判断 end
-//    xinglang 2020/11/25 rootPathを変更できるように start
-    static var rootPath:            String = NSHomeDirectory() + "/Documents/TABdata"
-//    xinglang 2020/11/25 rootPathを変更できるように end
+    static var rootPath:            String { NSHomeDirectory() + "/Documents/TABdata" }
     static var webPath:             String { NSHomeDirectory() + "/Library/WebPage" }
-//    xinglang 2020/11/25 webDataPathを変更できるように start
-    static var webDataPath:         String = NSHomeDirectory() + "/Library/WebPage/TABdata"
-//    xinglang 2020/11/25 webDataPathを変更できるように end
+    static var webDataPath:         String { NSHomeDirectory() + "/Library/WebPage/TABdata" }
     static var dummyId:             String { "00000000-0000-0000-0000-000000000000" }
     static var keyChainExpiration:  String { "expiration" }
     static var keyChainAccount:     String { "MICHI-TEN ASSIST" }
@@ -39,53 +32,6 @@ struct DataManager {
         }
         copyWeb()
     }
-    
-//    xinglang 2020/11/19 アクティベーションを使わない時Guest作成 start
-    static func setupGuest(){
-        let guestFilePath = NSHomeDirectory() + "/Documents/Guest"
-        let bundelGuestPath = Bundle.main.path(forResource: "Guest", ofType: .none)
-        let indexFilePath = bundelGuestPath! + "/index.json"
-        let settingFilePath = bundelGuestPath! + "/setting.json"
-        let DeviceLogFilePath = bundelGuestPath! + "/DeviceLog.json"
-        let FacilitiesPath = bundelGuestPath! + "/Facilities"
-        let ImagesPath = bundelGuestPath! + "/Images"
-        
-        let toIndexFilePath = guestFilePath + "/index.json"
-        let toSettingFilePath = guestFilePath + "/setting.json"
-        let toDeviceLogFilePath = guestFilePath + "/DeviceLog.json"
-        let toFacilitiesPath = guestFilePath + "/Facilities"
-        let toImagesPath = guestFilePath + "/Images"
-        
-        if !FileManager.default.fileExists(atPath: guestFilePath){
-            do{
-                try FileManager.default.createDirectory(atPath: guestFilePath, withIntermediateDirectories: true, attributes: nil)
-            }catch{}
-        }
-        do{
-            try FileManager.default.copyItem(atPath: indexFilePath, toPath: toIndexFilePath)
-            try FileManager.default.copyItem(atPath: settingFilePath, toPath: toSettingFilePath)
-            try FileManager.default.copyItem(atPath: DeviceLogFilePath, toPath: toDeviceLogFilePath)
-            try FileManager.default.copyItem(atPath: FacilitiesPath, toPath: toFacilitiesPath)
-            try FileManager.default.copyItem(atPath: ImagesPath, toPath: toImagesPath)
-        }catch{}
-        
-        self.rootPath = guestFilePath
-        self.webDataPath = NSHomeDirectory() + "/Library/WebPage/Guest"
-    }
-//    xinglang 2020/11/19 アクティベーションを使わない時Guestの作成 end
-   
-//    xinglang 2020/11/25 アクティベーションを使わない時Guestの削除 start
-    static func deleteGuest(){
-        let guestFilePath = NSHomeDirectory() + "/Documents/Guest"
-        if FileManager.default.fileExists(atPath: guestFilePath){
-            do{
-                try FileManager.default.removeItem(atPath: guestFilePath)
-            }catch{
-                
-            }
-        }
-    }
-//    xinglang 2020/11/25 アクティベーションを使わない時Guestの削除 start
     
     static func imageFor(facilitySn: String?, fileName: String?) -> UIImage? {
         let url = URL(fileURLWithPath: rootPath)
