@@ -452,10 +452,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MICHI-TEN ASSIST/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2753268R9U;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "MICHI-TEN ASSIST/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -463,9 +464,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.13.201224;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.furukawaelectric.michiten-assist";
 				PRODUCT_NAME = "みちてんアシスト";
+				PROVISIONING_PROFILE_SPECIFIER = "michiten-assist";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -473,10 +476,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MICHI-TEN ASSIST/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2753268R9U;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "MICHI-TEN ASSIST/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -484,9 +488,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.13.201224;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.furukawaelectric.michiten-assist";
 				PRODUCT_NAME = "みちてんアシスト";
+				PROVISIONING_PROFILE_SPECIFIER = "michiten-assist";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
