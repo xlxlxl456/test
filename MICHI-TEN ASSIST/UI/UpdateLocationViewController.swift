@@ -82,10 +82,9 @@ extension UpdateLocationViewController: CLLocationManagerDelegate {
 
 extension UpdateLocationViewController {
 //   xinglang 2020//11/20 withSkipを追加して、新規する時alertにskipがある start
-    static func updateFacility(serialNumber: String?, viewController: UIViewController, showConfirm: Bool = false,withSkip: Bool = false, completion: ((CLLocation?) -> Void)? = nil)
-//    static func updateFacility(serialNumber: String?, viewController: UIViewController, showConfirm: Bool = false, completion: ((CLLocation?) -> Void)? = nil)
-//   xinglang 2020//11/20 withSkipを追加して、新規する時alertにskipがある start
-    {
+    static func updateFacility(serialNumber: String?, viewController: UIViewController, showConfirm: Bool = false,withSkip: Bool = false, completion: ((CLLocation?) -> Void)? = nil){
+//    static func updateFacility(serialNumber: String?, viewController: UIViewController, showConfirm: Bool = false, completion: ((CLLocation?) -> Void)? = nil){
+//   xinglang 2020//11/20 withSkipを追加して、新規する時alertにskipがある end
         self.show(from: viewController,withSkip: withSkip) { [weak viewController] location in
             guard let location = location else {
                 completion?(nil)
@@ -121,7 +120,10 @@ extension UpdateLocationViewController {
         }
     }
     
-    private static func show(from viewController: UIViewController,withSkip: Bool, completion: @escaping (CLLocation?) -> Void) {
+//   xinglang 2020//11/20 withSkipを追加して、新規する時alertにskipがある start
+//    private static func show(from viewController: UIViewController, completion: @escaping (CLLocation?) -> Void){
+    private static func show(from viewController: UIViewController,withSkip: Bool, completion: @escaping (CLLocation?) -> Void){
+//   xinglang 2020//11/20 withSkipを追加して、新規する時alertにskipがある end
         let alert = UpdateLocationViewController(title: "GPSの補正を行っています。\nアンテナの位置を変えないでください。",
                                             message: "\n0%\n\n\n",
                                             preferredStyle: .alert)

@@ -50,6 +50,7 @@ extension SplashViewController {
         ARManager.shared.authorizeLocation { [weak self] authorized in
             if authorized {
 //    xinglang 2020/11/25 フォルダの確認をアクティベーションの後にする　start
+//                self?.checkData()
                 self?.checkExpiration()
 //    xinglang 2020/11/25 フォルダの確認をアクティベーションの後にする　end
             } else {
@@ -76,10 +77,14 @@ extension SplashViewController {
         })
     }
     
-    private func checkExpiration(){
+//    xinglang 2020/11/25 戻り値が必要ないため　start
+//    private func checkExpiration() -> Bool {
+    private func checkExpiration() {
+//    xinglang 2020/11/25 戻り値が必要ないため　end
         if let expiration = DataManager.expiration {
             if expiration > Date() {
 //    xinglang 2020/11/25 フォルダの確認をアクティベーションの後にする、Guestフォルダを削除　start
+//                return true
                 DataManager.deleteGuest()
                 self.checkData()
 //    xinglang 2020/11/25 フォルダの確認をアクティベーションの後にする、Guestフォルダを削除　end

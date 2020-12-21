@@ -74,10 +74,11 @@ final class ARViewController: UIViewController {
     }
     
     @IBAction private func newFacility(_ sender: Any) {
-//       xinglang 2020/11/20 新規する時スキップできるように
-//        UpdateLocationViewController.updateFacility(serialNumber: nil, viewController: self)
-        UpdateLocationViewController.updateFacility(serialNumber: nil, viewController: self,withSkip: true)
-        { [weak self] location in
+//       xinglang 2020/11/20 新規する時スキップできるように start
+//        UpdateLocationViewController.updateFacility(serialNumber: nil, viewController: self) { [weak self]
+        UpdateLocationViewController.updateFacility(serialNumber: nil, viewController: self,withSkip: true) { [weak self]
+//       xinglang 2020/11/20 新規する時スキップできるように end
+            location in
             guard let self = self, let location = location else {
                 return
             }
