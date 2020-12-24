@@ -41,19 +41,6 @@ final class ActivationViewController: UITableViewController {
         button.alpha = button.isEnabled ? 1 : 0.5
     }
     
-//    xinglang 2020/11/25 体験版ボタン　start
-    @IBAction func guestStart(_ sender: Any) {
-        GuestStart()
-    }
-    
-    func GuestStart(){
-        DataManager.guestMode = true
-        DataManager.setupGuest()
-        (UIApplication.shared.delegate as? AppDelegate)?
-        .transitionRootViewController(storyboardIdentifier: "ARViewController")
-    }
-//    xinglang 2020/11/25 体験版ボタン　end
-    
     @IBAction func activate(_ sender: Any) {
         activate()
     }
@@ -78,9 +65,6 @@ final class ActivationViewController: UITableViewController {
             
             guard expiration > Date() else {
                 self?.activationDidFinish(errorMessage: "有効期限が切れています。")
-//      xinglang 2020/12/18 有効期限が切るなら体験版に入る　start
-                self!.GuestStart()
-//      xinglang 2020/12/18 有効期限が切るなら体験版に入る　start
                 return
             }
             
@@ -131,22 +115,6 @@ final class ActivationViewController: UITableViewController {
         }.resume()
     }
     
-//  xinglang 2020/12/18 TABdataフォルダを確認　start
-    private func checkData() {
-        if DataManager.dataExsits {
-                (UIApplication.shared.delegate as? AppDelegate)?
-                    .transitionRootViewController(storyboardIdentifier: "ARViewController")
-            return
-        }
-        showAlert(title: "確認",
-                  message: "TABdataフォルダが見つかりません。\nフォルダをコピーしてください。",
-                  actionTitle: "リトライ",
-                  action: { [weak self] in
-                    self?.checkData()
-        })
-    }
-//  xinglang 2020/12/18 TABdataフォルダを確認　start
-    
     private func activationDidFinish(errorMessage: String?) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {
@@ -160,12 +128,8 @@ final class ActivationViewController: UITableViewController {
                 DataManager.deleteExpiration()
                 self.showAlert(title: "エラー", message: errorMessage)
             } else {
-//      xinglang 2020/12/18 アクティベーションが成功したら、Guestフォルダを削除して、TABdataフォルダを確認　start
-//                (UIApplication.shared.delegate as? AppDelegate)?
-//                .transitionRootViewController(storyboardIdentifier: "ARViewController")
-                DataManager.deleteGuest()
-                self.checkData()
-//      xinglang 2020/12/18 アクティベーションが成功したら、Guestフォルダを削除して、TABdataフォルダを確認　start
+                (UIApplication.shared.delegate as? AppDelegate)?
+                .transitionRootViewController(storyboardIdentifier: "ARViewController")
             }
         }
     }
