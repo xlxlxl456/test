@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+/* ---------------- Header ---------------- */
+header {
+    width: 100%;
+    position: fixed;
+    margin: -5px;
+}
+header a{
+    text-decoration: none;
+    color: white;
+}
+.top {
+    display: inline-block;
+}
+/* 左矢印 */
+.left_button {
+    float: left;
+    margin-left: 10px;
+    border-top: 50px solid transparent;
+    border-right: 50px solid skyblue;
+    border-bottom: 50px solid transparent;
+}
+/* 右矢印 */
+.right_button {
+    float: right;
+    margin-right: 10px;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid skyblue;
+}
+/* メニューボタン */
+.menu_button {
+    margin-left: 50px;
+    width: 300px;
+    height: 100px;
+    line-height: 50px;
+    font-size: 24px;
+    text-align: center;
+    background: yellowgreen;
+    border: gray 1px solid;
+    border-radius: 15px;
+}
+/* ---------------- Header ---------------- */
+
+.main {
+    padding-top: 100px;
+    margin: 0 10px;
+}
+.title {
+    text-align: center;
+    letter-spacing: 2em;
+    color: gray;
+}
+/* ---------------- ○〜○まで ---------------- */
+.until {
+    float: right;
+    margin-right: 30px;
+    color: gray;
+}
+.until .inline {
+    display: inline-block;
+}
+.until input {
+    width: 50px;
+    height: 50px;
+    border: 1px gray solid;
+    border-radius: 25px;
+}
+/* ---------------- ○〜○まで ---------------- */
+
+.main_table {
+    margin-top: 100px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.main_table th,
+.main_table td {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid black;
+}
+.main_table input {
+    border: none;
+    width: 25px;
+    height: 100%;
+}
+.remarks_tr th{
+    font-size: 10px;
+}
+.sub_table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.sub_table th,
+.sub_table td {
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    border: none;
+}
+.sub_table input {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+.sub_table .poles {
+    border-right: 1px black solid;
+}

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="fieldBook.css">
+    <title>FieldBook</title>
+</head>
+<body>
+    <header>
+        <div class="top left_button">
+            <!-- left_Button -->
+            <a href="#"></a>
+        </div>
+        <div class="top menu_button">
+            <h1>
+                <a href="../Top/top.html">メニュー</a>
+            </h1>
+        </div>
+        <div class="top right_button">
+            <!-- right_Button -->
+            <a href="#"></a>
+        </div>
+    </header>
+    
+    <div class="main">
+        <div class="title">
+            <h1>中部電力柱（増条）</h1>
+        </div>
+        <div class="until">
+            <input type="text" name="until_1" class="inline until_1">
+            <p class="inline">〜</p>
+            <input type="text" name="until_2" class="inline until_2">
+            <p class="inline">まで</p>
+        </div>
+
+        <!-- table -->
+        <table class="main_table">
+            <tr>
+                <th rowspan="2">日付</th>
+                <th rowspan="2">図番</th>
+                <th rowspan="2">紐上不要</th>
+                <th rowspan="2">番号</th>
+                <th rowspan="2" colspan="2">電柱番号</th>
+                <th rowspan="2">種類</th>
+                <th rowspan="2">長さ</th>
+                <th rowspan="2">強度</th>
+                <th rowspan="2">高圧</th>
+                <th rowspan="2">低圧</th>
+                <th rowspan="2">変圧</th>
+                <th rowspan="2">開閉</th>
+                <th colspan="5">既設共架者</th>
+                <th rowspan="2">増条位置</th>
+                <th colspan="3">離隔</th>
+                <th rowspan="2">増条地上高</th>
+            </tr>
+            <tr>
+                <th>①</th>
+                <th>②</th>
+                <th>③</th>
+                <th>④</th>
+                <th>⑤</th>
+                <th>配電</th>
+                <th>上位</th>
+                <th>下位</th>
+            </tr>
+            <!-- No.1 -->
+            <tr>
+                <td><input type="text" name="day"></td>  <!-- 日付 -->
+                <td><input type="text" name="zuban"></td>  <!-- 図番 -->
+                <td><input type="text" name="unnecessary"></td>  <!-- 紐上不要 -->
+                <td>1</td>  <!-- 番号 -->
+                <td><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                <td><input type="text" name="type"></td>  <!-- 種類 -->
+                <td><input type="number" name="length"></td>  <!-- 長さ -->
+                <td><input type="number" name="strength"></td>  <!-- 強度 -->
+                <td><input type="text" name="high_volt"></td>  <!-- 高圧 -->
+                <td><input type="text" name="low_volt"></td>  <!-- 低圧 -->
+                <td><input type="text" name="transformation_volt"></td>  <!-- 変圧 -->
+                <td><input type="text" name="switch"></td>  <!-- 開閉 -->
+                <td><input type="text" name="existing_colleague_1"></td>  <!-- 既設共架者1 -->
+                <td><input type="text" name="existing_colleague_2"></td>  <!-- 既設共架者2 -->
+                <td><input type="text" name="existing_colleague_3"></td>  <!-- 既設共架者3 -->
+                <td><input type="text" name="existing_colleague_4"></td>  <!-- 既設共架者4 -->
+                <td><input type="text" name="existing_colleague_5"></td>  <!-- 既設共架者5 -->
+                <td><input type="number" name="existing_colleague_1"></td>  <!-- 増条位置 -->
+                <td><input type="number" name="power_distribution"></td>  <!-- 離隔_配電 -->
+                <td><input type="number" name="top"></td>  <!-- 離隔_上位 -->
+                <td><input type="number" name="subordinate"></td>  <!-- 離隔_下位 -->
+                <td><input type="number" name="height"></td>  <!-- 増条地上高 -->
+            </tr>
+            <!-- No.2 -->
+            <tr>
+                <td><input type="text" name="day"></td>  <!-- 日付 -->
+                <td><input type="text" name="zuban"></td>  <!-- 図番 -->
+                <td><input type="text" name="unnecessary"></td>  <!-- 紐上不要 -->
+                <td>2</td>  <!-- 番号 -->
+                <td><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                <td><input type="text" name="type"></td>  <!-- 種類 -->
+                <td><input type="number" name="length"></td>  <!-- 長さ -->
+                <td><input type="number" name="strength"></td>  <!-- 強度 -->
+                <td><input type="text" name="high_volt"></td>  <!-- 高圧 -->
+                <td><input type="text" name="low_volt"></td>  <!-- 低圧 -->
+                <td><input type="text" name="transformation_volt"></td>  <!-- 変圧 -->
+                <td><input type="text" name="switch"></td>  <!-- 開閉 -->
+                <td><input type="text" name="existing_colleague_1"></td>  <!-- 既設共架者1 -->
+                <td><input type="text" name="existing_colleague_2"></td>  <!-- 既設共架者2 -->
+                <td><input type="text" name="existing_colleague_3"></td>  <!-- 既設共架者3 -->
+                <td><input type="text" name="existing_colleague_4"></td>  <!-- 既設共架者4 -->
+                <td><input type="text" name="existing_colleague_5"></td>  <!-- 既設共架者5 -->
+                <td><input type="number" name="existing_colleague_1"></td>  <!-- 増条位置 -->
+                <td><input type="number" name="power_distribution"></td>  <!-- 離隔_配電 -->
+                <td><input type="number" name="top"></td>  <!-- 離隔_上位 -->
+                <td><input type="number" name="subordinate"></td>  <!-- 離隔_下位 -->
+                <td><input type="number" name="height"></td>  <!-- 増条地上高 -->
+            </tr>
+            <!-- No.3 -->
+            <tr>
+                <td><input type="text" name="day"></td>  <!-- 日付 -->
+                <td><input type="text" name="zuban"></td>  <!-- 図番 -->
+                <td><input type="text" name="unnecessary"></td>  <!-- 紐上不要 -->
+                <td>3</td>  <!-- 番号 -->
+                <td><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                <td><input type="text" name="type"></td>  <!-- 種類 -->
+                <td><input type="number" name="length"></td>  <!-- 長さ -->
+                <td><input type="number" name="strength"></td>  <!-- 強度 -->
+                <td><input type="text" name="high_volt"></td>  <!-- 高圧 -->
+                <td><input type="text" name="low_volt"></td>  <!-- 低圧 -->
+                <td><input type="text" name="transformation_volt"></td>  <!-- 変圧 -->
+                <td><input type="text" name="switch"></td>  <!-- 開閉 -->
+                <td><input type="text" name="existing_colleague_1"></td>  <!-- 既設共架者1 -->
+                <td><input type="text" name="existing_colleague_2"></td>  <!-- 既設共架者2 -->
+                <td><input type="text" name="existing_colleague_3"></td>  <!-- 既設共架者3 -->
+                <td><input type="text" name="existing_colleague_4"></td>  <!-- 既設共架者4 -->
+                <td><input type="text" name="existing_colleague_5"></td>  <!-- 既設共架者5 -->
+                <td><input type="number" name="existing_colleague_1"></td>  <!-- 増条位置 -->
+                <td><input type="number" name="power_distribution"></td>  <!-- 離隔_配電 -->
+                <td><input type="number" name="top"></td>  <!-- 離隔_上位 -->
+                <td><input type="number" name="subordinate"></td>  <!-- 離隔_下位 -->
+                <td><input type="number" name="height"></td>  <!-- 増条地上高 -->
+            </tr>
+            <!-- No.4 -->
+            <tr>
+                <td><input type="text" name="day"></td>  <!-- 日付 -->
+                <td><input type="text" name="zuban"></td>  <!-- 図番 -->
+                <td><input type="text" name="unnecessary"></td>  <!-- 紐上不要 -->
+                <td>4</td>  <!-- 番号 -->
+                <td><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                <td><input type="text" name="type"></td>  <!-- 種類 -->
+                <td><input type="number" name="length"></td>  <!-- 長さ -->
+                <td><input type="number" name="strength"></td>  <!-- 強度 -->
+                <td><input type="text" name="high_volt"></td>  <!-- 高圧 -->
+                <td><input type="text" name="low_volt"></td>  <!-- 低圧 -->
+                <td><input type="text" name="transformation_volt"></td>  <!-- 変圧 -->
+                <td><input type="text" name="switch"></td>  <!-- 開閉 -->
+                <td><input type="text" name="existing_colleague_1"></td>  <!-- 既設共架者1 -->
+                <td><input type="text" name="existing_colleague_2"></td>  <!-- 既設共架者2 -->
+                <td><input type="text" name="existing_colleague_3"></td>  <!-- 既設共架者3 -->
+                <td><input type="text" name="existing_colleague_4"></td>  <!-- 既設共架者4 -->
+                <td><input type="text" name="existing_colleague_5"></td>  <!-- 既設共架者5 -->
+                <td><input type="number" name="existing_colleague_1"></td>  <!-- 増条位置 -->
+                <td><input type="number" name="power_distribution"></td>  <!-- 離隔_配電 -->
+                <td><input type="number" name="top"></td>  <!-- 離隔_上位 -->
+                <td><input type="number" name="subordinate"></td>  <!-- 離隔_下位 -->
+                <td><input type="number" name="height"></td>  <!-- 増条地上高 -->
+            </tr>
+            <!-- No.5 -->
+            <tr>
+                <td><input type="text" name="day"></td>  <!-- 日付 -->
+                <td><input type="text" name="zuban"></td>  <!-- 図番 -->
+                <td><input type="text" name="unnecessary"></td>  <!-- 紐上不要 -->
+                <td>5</td>  <!-- 番号 -->
+                <td><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                <td><input type="text" name="type"></td>  <!-- 種類 -->
+                <td><input type="number" name="length"></td>  <!-- 長さ -->
+                <td><input type="number" name="strength"></td>  <!-- 強度 -->
+                <td><input type="text" name="high_volt"></td>  <!-- 高圧 -->
+                <td><input type="text" name="low_volt"></td>  <!-- 低圧 -->
+                <td><input type="text" name="transformation_volt"></td>  <!-- 変圧 -->
+                <td><input type="text" name="switch"></td>  <!-- 開閉 -->
+                <td><input type="text" name="existing_colleague_1"></td>  <!-- 既設共架者1 -->
+                <td><input type="text" name="existing_colleague_2"></td>  <!-- 既設共架者2 -->
+                <td><input type="text" name="existing_colleague_3"></td>  <!-- 既設共架者3 -->
+                <td><input type="text" name="existing_colleague_4"></td>  <!-- 既設共架者4 -->
+                <td><input type="text" name="existing_colleague_5"></td>  <!-- 既設共架者5 -->
+                <td><input type="number" name="existing_colleague_1"></td>  <!-- 増条位置 -->
+                <td><input type="number" name="power_distribution"></td>  <!-- 離隔_配電 -->
+                <td><input type="number" name="top"></td>  <!-- 離隔_上位 -->
+                <td><input type="number" name="subordinate"></td>  <!-- 離隔_下位 -->
+                <td><input type="number" name="height"></td>  <!-- 増条地上高 -->
+            </tr>
+            <!-- No.6 -->
+            <tr>
+                <td><input type="text" name="day"></td>  <!-- 日付 -->
+                <td><input type="text" name="zuban"></td>  <!-- 図番 -->
+                <td><input type="text" name="unnecessary"></td>  <!-- 紐上不要 -->
+                <td>6</td>  <!-- 番号 -->
+                <td><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                <td><input type="text" name="type"></td>  <!-- 種類 -->
+                <td><input type="number" name="length"></td>  <!-- 長さ -->
+                <td><input type="number" name="strength"></td>  <!-- 強度 -->
+                <td><input type="text" name="high_volt"></td>  <!-- 高圧 -->
+                <td><input type="text" name="low_volt"></td>  <!-- 低圧 -->
+                <td><input type="text" name="transformation_volt"></td>  <!-- 変圧 -->
+                <td><input type="text" name="switch"></td>  <!-- 開閉 -->
+                <td><input type="text" name="existing_colleague_1"></td>  <!-- 既設共架者1 -->
+                <td><input type="text" name="existing_colleague_2"></td>  <!-- 既設共架者2 -->
+                <td><input type="text" name="existing_colleague_3"></td>  <!-- 既設共架者3 -->
+                <td><input type="text" name="existing_colleague_4"></td>  <!-- 既設共架者4 -->
+                <td><input type="text" name="existing_colleague_5"></td>  <!-- 既設共架者5 -->
+                <td><input type="number" name="existing_colleague_1"></td>  <!-- 増条位置 -->
+                <td><input type="number" name="power_distribution"></td>  <!-- 離隔_配電 -->
+                <td><input type="number" name="top"></td>  <!-- 離隔_上位 -->
+                <td><input type="number" name="subordinate"></td>  <!-- 離隔_下位 -->
+                <td><input type="number" name="height"></td>  <!-- 増条地上高 -->
+            </tr>
+            <!-- No.7 -->
+            <tr>
+                <td><input type="text" name="day"></td>  <!-- 日付 -->
+                <td><input type="text" name="zuban"></td>  <!-- 図番 -->
+                <td><input type="text" name="unnecessary"></td>  <!-- 紐上不要 -->
+                <td>7</td>  <!-- 番号 -->
+                <td><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                <td><input type="text" name="type"></td>  <!-- 種類 -->
+                <td><input type="number" name="length"></td>  <!-- 長さ -->
+                <td><input type="number" name="strength"></td>  <!-- 強度 -->
+                <td><input type="text" name="high_volt"></td>  <!-- 高圧 -->
+                <td><input type="text" name="low_volt"></td>  <!-- 低圧 -->
+                <td><input type="text" name="transformation_volt"></td>  <!-- 変圧 -->
+                <td><input type="text" name="switch"></td>  <!-- 開閉 -->
+                <td><input type="text" name="existing_colleague_1"></td>  <!-- 既設共架者1 -->
+                <td><input type="text" name="existing_colleague_2"></td>  <!-- 既設共架者2 -->
+                <td><input type="text" name="existing_colleague_3"></td>  <!-- 既設共架者3 -->
+                <td><input type="text" name="existing_colleague_4"></td>  <!-- 既設共架者4 -->
+                <td><input type="text" name="existing_colleague_5"></td>  <!-- 既設共架者5 -->
+                <td><input type="number" name="existing_colleague_1"></td>  <!-- 増条位置 -->
+                <td><input type="number" name="power_distribution"></td>  <!-- 離隔_配電 -->
+                <td><input type="number" name="top"></td>  <!-- 離隔_上位 -->
+                <td><input type="number" name="subordinate"></td>  <!-- 離隔_下位 -->
+                <td><input type="number" name="height"></td>  <!-- 増条地上高 -->
+            </tr>
+            <!-- No.8 -->
+            <tr>
+                <td><input type="text" name="day"></td>  <!-- 日付 -->
+                <td><input type="text" name="zuban"></td>  <!-- 図番 -->
+                <td><input type="text" name="unnecessary"></td>  <!-- 紐上不要 -->
+                <td>8</td>  <!-- 番号 -->
+                <td><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                <td><input type="text" name="type"></td>  <!-- 種類 -->
+                <td><input type="number" name="length"></td>  <!-- 長さ -->
+                <td><input type="number" name="strength"></td>  <!-- 強度 -->
+                <td><input type="text" name="high_volt"></td>  <!-- 高圧 -->
+                <td><input type="text" name="low_volt"></td>  <!-- 低圧 -->
+                <td><input type="text" name="transformation_volt"></td>  <!-- 変圧 -->
+                <td><input type="text" name="switch"></td>  <!-- 開閉 -->
+                <td><input type="text" name="existing_colleague_1"></td>  <!-- 既設共架者1 -->
+                <td><input type="text" name="existing_colleague_2"></td>  <!-- 既設共架者2 -->
+                <td><input type="text" name="existing_colleague_3"></td>  <!-- 既設共架者3 -->
+                <td><input type="text" name="existing_colleague_4"></td>  <!-- 既設共架者4 -->
+                <td><input type="text" name="existing_colleague_5"></td>  <!-- 既設共架者5 -->
+                <td><input type="number" name="existing_colleague_1"></td>  <!-- 増条位置 -->
+                <td><input type="number" name="power_distribution"></td>  <!-- 離隔_配電 -->
+                <td><input type="number" name="top"></td>  <!-- 離隔_上位 -->
+                <td><input type="number" name="subordinate"></td>  <!-- 離隔_下位 -->
+                <td><input type="number" name="height"></td>  <!-- 増条地上高 -->
+            </tr>
+            <!-- No.9 -->
+            <tr>
+                <td><input type="text" name="day"></td>  <!-- 日付 -->
+                <td><input type="text" name="zuban"></td>  <!-- 図番 -->
+                <td><input type="text" name="unnecessary"></td>  <!-- 紐上不要 -->
+                <td>9</td>  <!-- 番号 -->
+                <td><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                <td><input type="text" name="type"></td>  <!-- 種類 -->
+                <td><input type="number" name="length"></td>  <!-- 長さ -->
+                <td><input type="number" name="strength"></td>  <!-- 強度 -->
+                <td><input type="text" name="high_volt"></td>  <!-- 高圧 -->
+                <td><input type="text" name="low_volt"></td>  <!-- 低圧 -->
+                <td><input type="text" name="transformation_volt"></td>  <!-- 変圧 -->
+                <td><input type="text" name="switch"></td>  <!-- 開閉 -->
+                <td><input type="text" name="existing_colleague_1"></td>  <!-- 既設共架者1 -->
+                <td><input type="text" name="existing_colleague_2"></td>  <!-- 既設共架者2 -->
+                <td><input type="text" name="existing_colleague_3"></td>  <!-- 既設共架者3 -->
+                <td><input type="text" name="existing_colleague_4"></td>  <!-- 既設共架者4 -->
+                <td><input type="text" name="existing_colleague_5"></td>  <!-- 既設共架者5 -->
+                <td><input type="number" name="existing_colleague_1"></td>  <!-- 増条位置 -->
+                <td><input type="number" name="power_distribution"></td>  <!-- 離隔_配電 -->
+                <td><input type="number" name="top"></td>  <!-- 離隔_上位 -->
+                <td><input type="number" name="subordinate"></td>  <!-- 離隔_下位 -->
+                <td><input type="number" name="height"></td>  <!-- 増条地上高 -->
+            </tr>
+            <!-- No.10 -->
+            <tr>
+                <td><input type="text" name="day"></td>  <!-- 日付 -->
+                <td><input type="text" name="zuban"></td>  <!-- 図番 -->
+                <td><input type="text" name="unnecessary"></td>  <!-- 紐上不要 -->
+                <td>10</td>  <!-- 番号 -->
+                <td><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                <td><input type="text" name="type"></td>  <!-- 種類 -->
+                <td><input type="number" name="length"></td>  <!-- 長さ -->
+                <td><input type="number" name="strength"></td>  <!-- 強度 -->
+                <td><input type="text" name="high_volt"></td>  <!-- 高圧 -->
+                <td><input type="text" name="low_volt"></td>  <!-- 低圧 -->
+                <td><input type="text" name="transformation_volt"></td>  <!-- 変圧 -->
+                <td><input type="text" name="switch"></td>  <!-- 開閉 -->
+                <td><input type="text" name="existing_colleague_1"></td>  <!-- 既設共架者1 -->
+                <td><input type="text" name="existing_colleague_2"></td>  <!-- 既設共架者2 -->
+                <td><input type="text" name="existing_colleague_3"></td>  <!-- 既設共架者3 -->
+                <td><input type="text" name="existing_colleague_4"></td>  <!-- 既設共架者4 -->
+                <td><input type="text" name="existing_colleague_5"></td>  <!-- 既設共架者5 -->
+                <td><input type="number" name="existing_colleague_1"></td>  <!-- 増条位置 -->
+                <td><input type="number" name="power_distribution"></td>  <!-- 離隔_配電 -->
+                <td><input type="number" name="top"></td>  <!-- 離隔_上位 -->
+                <td><input type="number" name="subordinate"></td>  <!-- 離隔_下位 -->
+                <td><input type="number" name="height"></td>  <!-- 増条地上高 -->
+            </tr>
+        </div>
+        <div>
+            <tr>
+                <th rowspan="2" colspan="3">備考</th>
+                <th rowspan="2">番号</th>
+                <th colspan="4">通信元</th>
+                <th colspan="5">通信先①</th>
+                <th colspan="5">通信先②</th>
+                <th colspan="5">通信先③</th>
+            </tr>
+            <tr class="remarks_tr">
+                <!-- 通信元 -->
+                <th>施設形態</th>
+                <th>中電柱番号</th>
+                <th>径間</th>
+                <th>架線状況</th>
+                <!-- 通信先① -->
+                <th>施設形態</th>
+                <th>中電柱番号</th>
+                <th>径間</th>
+                <th>架線状況</th>
+                <th>角度</th>
+                <!-- 通信先② -->
+                <th>施設形態</th>
+                <th>中電柱番号</th>
+                <th>径間</th>
+                <th>架線状況</th>
+                <th>角度</th>
+                <!-- 通信先③ -->
+                <th>施設形態</th>
+                <th>中電柱番号</th>
+                <th>径間</th>
+                <th>架線状況</th>
+                <th>角度</th>
+            </tr>
+            <!-- No.1 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>1</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+            <!-- No.2 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>2</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+            <!-- No.3 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>3</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+            <!-- No.4 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>4</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+            <!-- No.5 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>5</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+            <!-- No.5 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>5</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+            <!-- No.6 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>6</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+            <!-- No.7 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>7</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+            <!-- No.8 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>8</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+            <!-- No.9 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>9</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+            <!-- No.10 -->
+            <tr>
+                <td colspan="3"><input type="text" name="remarks"></td> <!-- 備考 -->
+                <td>10</td>  <!-- 番号 -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <!-- 通信先① -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先② -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+                <!-- 通信先③ -->
+                <td><input type="text" name="facility_type"></td> <!-- 施設形態 -->
+                <td>
+                    <table class="sub_table">
+                        <td class="poles"><input type="number" name="utility_poles_number_1"></td>  <!-- 電柱番号1 -->
+                        <td><input type="number" name="utility_poles_number_2"></td>  <!-- 電柱番号2 -->
+                    </table>
+                </td>
+                <td><input type="text" name="span"></td> <!-- 径間 -->
+                <td><input type="text" name="situation"></td> <!-- 架線状況 -->
+                <td><input type="number" name="angle"></td>  <!-- 角度 -->
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

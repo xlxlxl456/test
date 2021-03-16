@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+body {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";
+    
+}
+
+.table {
+    border-collapse: collapse;
+    margin-top: 0;
+    border: 1px solid black;
+}
+.table th,
+.table td {
+    text-align: center;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+.cellcenter
+{
+    text-align: center;
+}
+
+/* table */
+.clientTable
+{
+    float: left;
+    margin: 15px 15px 15px 15px;
+}
+.clientTable th,
+.clientTable td {
+    font-size: 20px;
+}
+.check {
+    width: 100px;
+}
+
+input.workNum
+{
+    width: 100px;
+    border: none;
+    outline: none;
+}
+input.workName
+{
+    width: 300px;
+    border: none;
+    outline: none;
+}
+
+.menu_button {
+    margin-top: 15px;
+    display: inline-block;
+    width: 175px;
+    height: 40px;
+    line-height: 3px;
+    font-size: 14px;
+    text-align: center;
+    background-color:#58ACFA;
+    border: gray 1px solid;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+}

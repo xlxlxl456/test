@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="completion.css">
+    <link rel="stylesheet" href="../css/dialog-polyfill.css">
+    <title>Completion</title>
+</head>
+<body>
+    <!--<header>-->
+    <div class="header">
+        <div class="saveButton menu_button">
+            <h1>Save</h1>
+        </div>
+        <div class="listButton menu_button">
+            <h1>10件表示</h1>
+        </div>
+        <div class="reload menu_button">
+            <h1>Reload</h1>
+        </div>
+        <div class="memo menu_button">
+            <h1>Memo</h1>
+        </div>
+        <div class="show_num">
+            <div>No.</div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="nav_title box">共架設位置等確認票兼しゅん工状態確認</div>
+            <table class="nav_tb">
+                <tr>
+                    <th>電柱番号</th>
+                        <td class="poles">
+                            <input class="joint" listNum="1" nameid="PoleNumber" type="text" onfocus="this.select();" name="utility_poles_number">
+                        </td> <!-- 電柱番号 -->
+                    <th>技術検討</th>
+                    <!-- 技術検討 -->
+                    <td>
+                        <select class="joint" listNum="1" nameid="TechReview" name="scrutiny" id="scrutiny">
+                            <option value=""></option>
+                            <option value="要">要</option>
+                            <option value="否">否</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+    </div>
+    <!--</header>-->
+    <div class="main">
+        <!-- 枠線内 -->
+        <div class="container">
+            <!-- 1. 配電設備の施設状況 -->
+            <div class="facility_status box">
+                <div class="title">1. 配電設備の施設状況</div>
+                <table class="table facility_table">
+                    <tr>
+                        <th colspan="2">支持物種類</th>
+                        <th>長さ</th>
+                        <th>強度</th>
+                    </tr>
+                    <tr>
+                        <!-- 支持物種類 -->
+                        <td colspan="2">
+                            <select class="before" listNum="1" nameid="ObjectType" name="type" id="type">
+                                <option value=""></option>
+                                <option value="コンクリート柱">コンクリート柱</option>
+                                <option value="コンクリート複合柱">コンクリート複合柱</option>
+                                <option value="銅管柱">銅管柱</option>
+                                <option value="木柱">木柱</option>
+                            </select>
+                        </td> 
+                        <td><input class="before" listNum="1" nameid="ObjectLength" type="number" onfocus="this.select();" name="length" placeholder="m"></td> <!-- 長さ -->
+                        <td><input class="before" listNum="1" nameid="ObjectStrength" type="number" onfocus="this.select();" name="strength" placeholder="kN"></td> <!-- 強度 -->
+                    </tr>
+                    <tr>
+                        <th>高圧線</th>
+                        <th>低圧線</th>
+                        <th>変圧器</th>
+                        <th>開閉器</th>
+                    </tr>
+                    <tr>
+                        <td> <!-- 高圧線 -->
+                            <select class="before" listNum="1" nameid="ObjectHighVoltLine" name="high_volt" id="high_volt">
+                                <option value=""></option>
+                                <option value="有">有</option>
+                                <option value="無">無</option>
+                            </select>
+                        </td>
+                        <td><!-- 低圧線 -->
+                            <select class="before" listNum="1" nameid="ObjectLowVoltLine" name="low_volt" id="low_volt">
+                                <option value=""></option>
+                                <option value="有">有</option>
+                                <option value="無">無</option>
+                            </select>
+                        </td> 
+                        <td> <!-- 変圧器 -->
+                            <select class="before" listNum="1" nameid="ObjectTransformer" name="Transformer" id="Transformer">
+                                <option value=""></option>
+                                <option value="有">有</option>
+                                <option value="無">無</option>
+                            </select>
+                        </td>
+                        <td> <!-- 開閉器 -->
+                            <select class="before non-switch" listNum="1" nameid="ObjectSwitch" name="switch" id="switch">
+                                <option value=""></option>
+                                <option value="有">有</option>
+                                <option value="無">無</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 1. 配電設備の施設状況 -->
+            <!-- 2. 共架施設状況と希望位置 -->
+            <div class="status box">
+                <div class="title">2. 共架施設状況と希望位置</div>
+                <div class="content">
+                    <table class="table existing_colleague_table">
+                        <tr>
+                            <th></th>
+                            <th>既設共架者</th>
+                        </tr>
+                        <tr>
+                            <th>①</th>
+                            <!-- 既設共架者1 -->
+                            <td>
+                                <input class="before" listNum="1" nameid="JointUseCompany1" type="text" onfocus="this.select();" name="existing_colleague_1" list="existing_colleague_1">
+                                <datalist name="existing_colleague_1" id="existing_colleague_1">
+                                    <option value="中電通信">
+                                    <option value="一般">
+                                    <option value="NTT">
+                                </datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>②</th>
+                            <!-- 既設共架者2 -->
+                            <td>
+                                <input class="before" listNum="1" nameid="JointUseCompany2" type="text" onfocus="this.select();" name="existing_colleague_2" list="existing_colleague_2">
+                                <datalist name="existing_colleague_2" id="existing_colleague_2">
+                                    <option value="中電通信">
+                                    <option value="一般">
+                                    <option value="NTT">
+                                </datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>③</th>
+                            <!-- 既設共架者3 -->
+                            <td>
+                                <input class="before" listNum="1" nameid="JointUseCompany3" type="text" onfocus="this.select();" name="existing_colleague_3" list="existing_colleague_3">
+                                <datalist name="existing_colleague_3" id="existing_colleague_3">
+                                    <option value="中電通信">
+                                    <option value="一般">
+                                    <option value="NTT">
+                                </datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>④</th>
+                            <!-- 既設共架者4 -->
+                            <td>
+                                <input class="before" listNum="1" nameid="JointUseCompany4" type="text" onfocus="this.select();" name="existing_colleague_4" list="existing_colleague_4">
+                                <datalist name="existing_colleague_4" id="existing_colleague_4">
+                                    <option value="中電通信">
+                                    <option value="一般">
+                                    <option value="NTT">
+                                </datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>⑤</th>
+                            <!-- 既設共架者5 -->
+                            <td>
+                                <input class="before" listNum="1" nameid="JointUseCompany5" type="text" onfocus="this.select();" name="existing_colleague_5" list="existing_colleague_5">
+                                <datalist name="existing_colleague_5" id="existing_colleague_5">
+                                    <option value="中電通信">
+                                    <option value="一般">
+                                    <option value="NTT">
+                                </datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>⑥</th>
+                            <!-- 既設共架者6 -->
+                            <td>
+                                <input class="before" listNum="1" nameid="JointUseCompany6" type="text" onfocus="this.select();" name="existing_colleague_6" list="existing_colleague_6">
+                                <datalist name="existing_colleague_6" id="existing_colleague_6">
+                                    <option value="中電通信">
+                                    <option value="一般">
+                                    <option value="NTT">
+                                </datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>⑦</th>
+                            <!-- 既設共架者7 -->
+                            <td>
+                                <input class="before" listNum="1" nameid="JointUseCompany7" type="text" onfocus="this.select();" name="existing_colleague_7" list="existing_colleague_7">
+                                <datalist name="existing_colleague_7" id="existing_colleague_7">
+                                    <option value="中電通信">
+                                    <option value="一般">
+                                    <option value="NTT">
+                                </datalist>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="content">
+                    <p>【共架予定位置】</p>
+                    <p><input class="before beforeCheck planCheck1" listNum="1" nameid="Single" type="checkbox" name="alone">単独</p>
+                    <p>(
+                        <select class="before" listNum="1" nameid="SingleTargetS" name="alone_text_1" id="alone_text_1">
+                            <option value=""></option>
+                            <option value="①">①</option>
+                            <option value="②">②</option>
+                            <option value="③">③</option>
+                            <option value="④">④</option>
+                            <option value="⑤">⑤</option>
+                            <option value="⑥">⑥</option>
+                            <option value="⑦">⑦</option>
+                        </select>
+                        と
+                        <select class="before" listNum="1" nameid="SingleTargetE" name="alone_text_2" id="alone_text_2">
+                            <option value=""></option>
+                            <option value="①">①</option>
+                            <option value="②">②</option>
+                            <option value="③">③</option>
+                            <option value="④">④</option>
+                            <option value="⑤">⑤</option>
+                            <option value="⑥">⑥</option>
+                            <option value="⑦">⑦</option>
+                        </select>
+                        の中間)
+                    </p>
+                    <p><input class="before beforeCheck planCheck2" listNum="1" nameid="Bundling" type="checkbox" name="bundling">一束化</p>
+                    <p>(
+                        <select class="before" listNum="1" nameid="BudlingTarget" name="bundling_text" id="bundling_text">
+                            <option value=""></option>
+                            <option value="①">①</option>
+                            <option value="②">②</option>
+                            <option value="③">③</option>
+                            <option value="④">④</option>
+                            <option value="⑤">⑤</option>
+                            <option value="⑥">⑥</option>
+                            <option value="⑦">⑦</option>
+                        </select>
+                        と一束化)</p>
+                    <p>【一束化予定事業者名】</p>
+                    <p class="named">
+                        [<input class="before" listNum="1" nameid="BudlingCompany" type="text" onfocus="this.select();" name="business name">]
+                    </p>
+                </div>
+            </div>
+            <!-- 2. 共架施設状況と希望位置 -->
+            <!-- 3. 共架位置と測定結果 -->
+            <div class="result">
+                <div class="title">3. 共架位置と測定結果</div>
+                <table class="table isolation_table">
+                    <tr>
+                        <th rowspan="2">配電設備との隔離距離</th>
+                        <th colspan="2">通信線との隔離距離</th>
+                        <th rowspan="2">共架予定位置の地上高</th>
+                    </tr>
+                    <tr>
+                        <th>直近上位</th>
+                        <th>直近下位</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="before" listNum="1" nameid="BeforeDistancePower" type="text" onfocus="this.select();" name="BeforeDistancePower" placeholder="m" list="BeforeDistancePower">
+                            <datalist name="BeforeDistancePower" id="BeforeDistancePower">
+                                <option value="1.0以上">
+                                <option value="0.1">
+                                <option value="0.2">
+                                <option value="0.3">
+                                <option value="0.4">
+                                <option value="0.5">
+                                <option value="0.6">
+                                <option value="0.7">
+                                <option value="0.8">
+                                <option value="0.9">
+                                <option value="無">
+                            </datalist>
+                        </td>   <!-- 配電設備との隔離距離 -->
+                        <td>
+                            <input class="before" listNum="1" nameid="BeforeDistanceLineH" type="text" onfocus="this.select();" name="most_recent" placeholder="m" list="BeforeDistanceLineH">
+                            <datalist name="BeforeDistanceLineH" id="BeforeDistanceLineH">
+                                <option value="無">
+                                <option value="0.1">
+                                <option value="0.2">
+                                <option value="0.3">
+                                <option value="0.4">
+                                <option value="0.5">
+                                <option value="0.6">
+                                <option value="0.7">
+                                <option value="0.8">
+                                <option value="0.9">
+                                <option value="1.0以上">
+                            </datalist>
+                        </td>   <!-- 直近上位 -->
+                        <td>
+                            <input class="before" listNum="1" nameid="BeforeDistanceLineL" type="text" onfocus="this.select();" name="latest" placeholder="m" list="BeforeDistanceLineL">
+                            <datalist name="BeforeDistanceLineL" id="BeforeDistanceLineL">
+                                <option value="無">
+                                <option value="0.1">
+                                <option value="0.2">
+                                <option value="0.3">
+                                <option value="0.4">
+                                <option value="0.5">
+                                <option value="0.6">
+                                <option value="0.7">
+                                <option value="0.8">
+                                <option value="0.9">
+                                <option value="1.0以上">
+                            </datalist>
+                        </td>   <!-- 直近下位 -->
+                        <td>
+                            <input class="before" listNum="1" nameid="BeforeGroundHeight" type="number" onfocus="this.select();" name="height" placeholder="m">
+                        </td>   <!-- 共架予定位置の地上高 -->
+                    </tr>
+                </table>
+                <div class="title">【しゅん工後測定結果】</div>
+                <table class="table isolation_table lightBlue">
+                    <tr>
+                        <th rowspan="2">配電設備との隔離距離</th>
+                        <th colspan="2">通信線との隔離距離</th>
+                        <th rowspan="2">共架予定位置の地上高</th>
+                    </tr>
+                    <tr>
+                        <th>直近上位</th>
+                        <th>直近下位</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="after" listNum="1" nameid="AfterDistancePower" type="text" onfocus="this.select();" name="AfterDistancePower" placeholder="m" list="AfterDistancePower">
+                            <datalist name="AfterDistancePower" id="AfterDistancePower">
+                                <option value="1.0以上">
+                                <option value="0.1">
+                                <option value="0.2">
+                                <option value="0.3">
+                                <option value="0.4">
+                                <option value="0.5">
+                                <option value="0.6">
+                                <option value="0.7">
+                                <option value="0.8">
+                                <option value="0.9">
+                                <option value="無">
+                            </datalist>
+                        </td>   <!-- 配電設備との隔離距離 -->
+                        <td>
+                            <input class="after" listNum="1" nameid="AfterDistanceLineH" type="text" onfocus="this.select();" name="most_recent" placeholder="m" list="AfterDistanceLineH">
+                            <datalist name="AfterDistanceLineH" id="AfterDistanceLineH">
+                                <option value="無">
+                                <option value="0.1">
+                                <option value="0.2">
+                                <option value="0.3">
+                                <option value="0.4">
+                                <option value="0.5">
+                                <option value="0.6">
+                                <option value="0.7">
+                                <option value="0.8">
+                                <option value="0.9">
+                                <option value="1.0以上">
+                            </datalist>
+                        </td>   <!-- 直近上位 -->
+                        <td>
+                            <input class="after" listNum="1" nameid="AfterDistanceLineL" type="text" onfocus="this.select();" name="latest" placeholder="m" list="AfterDistanceLineL">
+                            <datalist name="AfterDistanceLineL" id="AfterDistanceLineL">
+                                <option value="無">
+                                <option value="0.1">
+                                <option value="0.2">
+                                <option value="0.3">
+                                <option value="0.4">
+                                <option value="0.5">
+                                <option value="0.6">
+                                <option value="0.7">
+                                <option value="0.8">
+                                <option value="0.9">
+                                <option value="1.0以上">
+                            </datalist>
+                        </td>   <!-- 直近下位 -->
+                        <td>
+                            <input class="after" listNum="1" nameid="AfterGroundHeight" type="number" onfocus="this.select();" name="height" placeholder="m">
+                        </td>   <!-- 共架予定位置の地上高 -->
+                    </tr>
+                </table>
+            </div>
+            <!-- 3. 共架位置と測定結果 -->
+            <!-- 4.施設形態 -->
+            <div class="facility_type">
+                <div>
+                    <div class="record">4.施設形態</div>
+                    <div class="record_title">【しゅん工後入力】</div>
+                </div>
+                <table class="table facility_type_table">
+                    <tr>
+                        <th rowspan="2"></th>
+                        <th rowspan="2">施設形態</th>
+                        <th rowspan="2">中電柱番号</th>
+                        <th rowspan="2">径間</th>
+                        <th rowspan="2">線下状況</th>
+                        <th rowspan="2">通信元との角度</th>
+                        <th colspan="2">外径</th>
+                        <th colspan="2">自重</th>
+                        <th class="lightBlue" rowspan="2">通信線</th>
+                        <th class="lightBlue" colspan="2">径間途中の隔離距離</th>
+                        <th class="lightBlue" rowspan="2">通信元との角度</th>
+                    </tr>
+                    <tr>
+                        <th>吊線</th>
+                        <th>通信線</th>
+                        <th>吊線</th>
+                        <th>通信線</th>
+                        <th class="lightBlue">低圧線</th>
+                        <th class="lightBlue">電力引込線</th>
+                    </tr>
+                    <tr>
+                        <th>通信元</th>
+                        <!-- 施設形態 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="1" nameid="FacilityType" type="text" onfocus="this.select();" name="facility_type" list="facility_type">
+                            <datalist id="facility_type">
+                                <option value="中電柱">
+                                <option value="NTT長尺柱">
+                                <option value="NTT短尺柱">
+                                <option value="空中分岐">
+                            </datalist>
+                        </td>
+                        <td><input class="srcBefore" listNum="1" source="1" nameid="FacilityNumber" type="text" onfocus="this.select();" name="utility_poles_number"></td> <!-- 中電柱番号 -->
+                        <td><input class="srcBefore" listNum="1" source="1" nameid="FacilitySpan" type="number" onfocus="this.select();" name="span" placeholder="m"></td> <!-- 径間 -->
+                        <!-- 線下状況 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="1" nameid="FacilityStatus" type="text" onfocus="this.select();" name="line_status" list="line_status">
+                            <datalist name="line_status" id="line_status">
+                                <option value="民地">
+                                <option value="道路">
+                                <option value="歩道">
+                                <option value="歩道橋">
+                                <option value="鉄道横断">
+                                <option value="道路横断">
+                            </datalist>
+                        </td>
+                        <td class="darkGray"></td> <!-- 通信元との角度 -->
+                        <!-- 外径 吊線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="1" nameid="OuterDiameterSuspension" type="text" onfocus="this.select();" name="outer_suspension" list="outer_suspension" placeholder="mm">
+                            <datalist name="outer_suspension" id="outer_suspension">
+                                <option value="3.6mm">
+                                <option value="6.9mm">
+                                <option value="1.6mm">
+                                <option value="1.2mm">
+                                <option value="7.6mm">
+                                <option value="10.0mm">
+                                <option value="15.3mm">
+                                <option value="2.0mm">
+                                <option value="8.5mm">
+                            </datalist>
+                        </td>
+                        <!-- 外径 通信線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="1" nameid="OuterDiameterLine" type="text" onfocus="this.select();" name="outer_communication" list="outer_communication" placeholder="mm">
+                            <datalist name="outer_communication" id="outer_communication">
+                                <option value="3.6mm">
+                                <option value="6.9mm">
+                                <option value="1.6mm">
+                                <option value="1.2mm">
+                                <option value="7.6mm">
+                                <option value="10.0mm">
+                                <option value="15.3mm">
+                                <option value="2.0mm">
+                                <option value="8.5mm">
+                            </datalist>
+                        </td>
+                        <!-- 自重 吊線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="1" nameid="OwnWeightSuspention" type="text" onfocus="this.select();" name="one_weight_suspension" list="one_weight_suspension" placeholder="kg/m">
+                            <datalist name="one_weight_suspension" id="one_weight_suspension">
+                                <option value="0.062kg/m">
+                                <option value="0.23kg/m">
+                                <option value="0.03kg/m">
+                                <option value="0.01kg/m">
+                                <option value="0.082kg/m">
+                                <option value="0.165kg/m">
+                                <option value="0.2kg/m">
+                                <option value="0.02kg/m">
+                                <option value="0.065kg/m">
+                            </datalist>
+                        </td>
+                        <!-- 自重 通信線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="1" nameid="OwnWeightLine" type="text" onfocus="this.select();" name="one_weight_communication" list="one_weight_communication" placeholder="kg/m">
+                            <datalist name="one_weight_communication" id="one_weight_communication">
+                                <option value="0.062kg/m">
+                                <option value="0.23kg/m">
+                                <option value="0.03kg/m">
+                                <option value="0.01kg/m">
+                                <option value="0.082kg/m">
+                                <option value="0.165kg/m">
+                                <option value="0.2kg/m">
+                                <option value="0.02kg/m">
+                                <option value="0.065kg/m">
+                            </datalist>
+                        </td>
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="1" nameid="LineLength" type="number" onfocus="this.select();" name="communication" placeholder="mm"></td> <!-- 通信線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="1" nameid="SpanDistanceLineL" type="number" onfocus="this.select();" name="low_volt" placeholder="/m"></td> <!-- 低圧線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="1" nameid="SpanDistanceLinePower" type="number" onfocus="this.select();" name="service_line" placeholder="m"></td> <!-- 電力引込線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="1" nameid="SourceAngleAfter" type="number" onfocus="this.select();" name="angle" placeholder="度"></td> <!-- 通信元との角度 -->
+                    </tr>
+                    <tr>
+                        <th>通信先①</th>
+                        <!-- 施設形態 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="2" nameid="FacilityType" type="text" onfocus="this.select();" name="facility_type" list="facility_type">
+                            <datalist id="facility_type">
+                                <option value="中電柱">
+                                <option value="NTT長尺柱">
+                                <option value="NTT短尺柱">
+                                <option value="空中分岐">
+                            </datalist>
+                        </td>
+                        <td><input class="srcBefore" listNum="1" source="2" nameid="FacilityNumber" type="text" onfocus="this.select();" name="utility_poles_number"></td> <!-- 中電柱番号 -->
+                        <td><input class="srcBefore" listNum="1" source="2" nameid="FacilitySpan" type="number" onfocus="this.select();" name="span" placeholder="m"></td> <!-- 径間 -->
+                        <!-- 線下状況 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="2" nameid="FacilityStatus" type="text" onfocus="this.select();" name="line_status" list="line_status">
+                            <datalist name="line_status" id="line_status">
+                                <option value="民地">
+                                <option value="道路">
+                                <option value="歩道">
+                                <option value="歩道橋">
+                                <option value="鉄道横断">
+                                <option value="道路横断">
+                            </datalist>
+                        </td>
+                        <td><input class="srcBefore" listNum="1" source="2" nameid="SourceAngleBefore" type="number" onfocus="this.select();" name="angle"></td> <!-- 通信元との角度 -->
+                        <!-- 外径 吊線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="2" nameid="OuterDiameterSuspension" type="text" onfocus="this.select();" name="outer_suspension" list="outer_suspension" placeholder="mm">
+                            <datalist name="outer_suspension" id="outer_suspension">
+                                <option value="3.6mm">
+                                <option value="6.9mm">
+                                <option value="1.6mm">
+                                <option value="1.2mm">
+                                <option value="7.6mm">
+                                <option value="10.0mm">
+                                <option value="15.3mm">
+                                <option value="2.0mm">
+                                <option value="8.5mm">
+                            </datalist>
+                        </td>
+                        <!-- 外径 通信線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="2" nameid="OuterDiameterLine" type="text" onfocus="this.select();" name="outer_communication" list="outer_communication" placeholder="mm">
+                            <datalist name="outer_communication" id="outer_communication">
+                                <option value="3.6mm">
+                                <option value="6.9mm">
+                                <option value="1.6mm">
+                                <option value="1.2mm">
+                                <option value="7.6mm">
+                                <option value="10.0mm">
+                                <option value="15.3mm">
+                                <option value="2.0mm">
+                                <option value="8.5mm">
+                            </datalist>
+                        </td>
+                        <!-- 自重 吊線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="2" nameid="OwnWeightSuspention" type="text" onfocus="this.select();" name="one_weight_suspension" list="one_weight_suspension" placeholder="kg/m">
+                            <datalist name="one_weight_suspension" id="one_weight_suspension">
+                                <option value="0.062kg/m">
+                                <option value="0.23kg/m">
+                                <option value="0.03kg/m">
+                                <option value="0.01kg/m">
+                                <option value="0.082kg/m">
+                                <option value="0.165kg/m">
+                                <option value="0.2kg/m">
+                                <option value="0.02kg/m">
+                                <option value="0.065kg/m">
+                            </datalist>
+                        </td>
+                        <!-- 自重 通信線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="2" nameid="OwnWeightLine" type="text" onfocus="this.select();" name="one_weight_communication" list="one_weight_communication" placeholder="kg/m">
+                            <datalist name="one_weight_communication" id="one_weight_communication">
+                                <option value="0.062kg/m">
+                                <option value="0.23kg/m">
+                                <option value="0.03kg/m">
+                                <option value="0.01kg/m">
+                                <option value="0.082kg/m">
+                                <option value="0.165kg/m">
+                                <option value="0.2kg/m">
+                                <option value="0.02kg/m">
+                                <option value="0.065kg/m">
+                            </datalist>
+                        </td>
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="2" nameid="LineLength" type="number" onfocus="this.select();" name="communication" placeholder="mm"></td> <!-- 通信線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="2" nameid="SpanDistanceLineL" type="number" onfocus="this.select();" name="low_volt" placeholder="/m"></td> <!-- 低圧線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="2" nameid="SpanDistanceLinePower" type="number" onfocus="this.select();" name="service_line" placeholder="m"></td> <!-- 電力引込線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="2" nameid="SourceAngleAfter" type="number" onfocus="this.select();" name="angle" placeholder="度"></td> <!-- 通信元との角度 -->
+                    </tr>
+                    <tr>
+                        <th>通信先②</th>
+                        <!-- 施設形態 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="3" nameid="FacilityType" type="text" onfocus="this.select();" name="facility_type" list="facility_type">
+                            <datalist id="facility_type">
+                                <option value="中電柱">
+                                <option value="NTT長尺柱">
+                                <option value="NTT短尺柱">
+                                <option value="空中分岐">
+                            </datalist>
+                        </td>
+                        <td><input class="srcBefore" listNum="1" source="3" nameid="FacilityNumber" type="text" onfocus="this.select();" name="utility_poles_number"></td> <!-- 中電柱番号 -->
+                        <td><input class="srcBefore" listNum="1" source="3" nameid="FacilitySpan" type="number" onfocus="this.select();" name="span" placeholder="m"></td> <!-- 径間 -->
+                        <!-- 線下状況 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="3" nameid="FacilityStatus" type="text" onfocus="this.select();" name="line_status" list="line_status">
+                            <datalist name="line_status" id="line_status">
+                                <option value="民地">
+                                <option value="道路">
+                                <option value="歩道">
+                                <option value="歩道橋">
+                                <option value="鉄道横断">
+                                <option value="道路横断">
+                            </datalist>
+                        </td>
+                        <td><input class="srcBefore" listNum="1" source="3" nameid="SourceAngleBefore" type="number" onfocus="this.select();" name="angle"></td> <!-- 通信元との角度 -->
+                        <!-- 外径 吊線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="3" nameid="OuterDiameterSuspension" type="text" onfocus="this.select();" name="outer_suspension" list="outer_suspension" placeholder="mm">
+                            <datalist name="outer_suspension" id="outer_suspension">
+                                <option value="3.6mm">
+                                <option value="6.9mm">
+                                <option value="1.6mm">
+                                <option value="1.2mm">
+                                <option value="7.6mm">
+                                <option value="10.0mm">
+                                <option value="15.3mm">
+                                <option value="2.0mm">
+                                <option value="8.5mm">
+                            </datalist>
+                        </td>
+                        <!-- 外径 通信線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="3" nameid="OuterDiameterLine" type="text" onfocus="this.select();" name="outer_communication" list="outer_communication" placeholder="mm">
+                            <datalist name="outer_communication" id="outer_communication">
+                                <option value="3.6mm">
+                                <option value="6.9mm">
+                                <option value="1.6mm">
+                                <option value="1.2mm">
+                                <option value="7.6mm">
+                                <option value="10.0mm">
+                                <option value="15.3mm">
+                                <option value="2.0mm">
+                                <option value="8.5mm">
+                            </datalist>
+                        </td>
+                        <!-- 自重 吊線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="3" nameid="OwnWeightSuspention" type="text" onfocus="this.select();" name="one_weight_suspension" list="one_weight_suspension" placeholder="kg/m">
+                            <datalist name="one_weight_suspension" id="one_weight_suspension">
+                                <option value="0.062kg/m">
+                                <option value="0.23kg/m">
+                                <option value="0.03kg/m">
+                                <option value="0.01kg/m">
+                                <option value="0.082kg/m">
+                                <option value="0.165kg/m">
+                                <option value="0.2kg/m">
+                                <option value="0.02kg/m">
+                                <option value="0.065kg/m">
+                            </datalist>
+                        </td>
+                        <!-- 自重 通信線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="3" nameid="OwnWeightLine" type="text" onfocus="this.select();" name="one_weight_communication" list="one_weight_communication" placeholder="kg/m">
+                            <datalist name="one_weight_communication" id="one_weight_communication">
+                                <option value="0.062kg/m">
+                                <option value="0.23kg/m">
+                                <option value="0.03kg/m">
+                                <option value="0.01kg/m">
+                                <option value="0.082kg/m">
+                                <option value="0.165kg/m">
+                                <option value="0.2kg/m">
+                                <option value="0.02kg/m">
+                                <option value="0.065kg/m">
+                            </datalist>
+                        </td>
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="3" nameid="LineLength" type="number" onfocus="this.select();" name="communication" placeholder="mm"></td> <!-- 通信線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="3" nameid="SpanDistanceLineL" type="number" onfocus="this.select();" name="low_volt" placeholder="/m"></td> <!-- 低圧線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="3" nameid="SpanDistanceLinePower" type="number" onfocus="this.select();" name="service_line" placeholder="m"></td> <!-- 電力引込線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="3" nameid="SourceAngleAfter" type="number" onfocus="this.select();" name="angle" placeholder="度"></td> <!-- 通信元との角度 -->
+                    </tr>
+                    <tr>
+                        <th>通信先③</th>
+                        <!-- 施設形態 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="4" nameid="FacilityType" type="text" onfocus="this.select();" name="facility_type" list="facility_type">
+                            <datalist id="facility_type">
+                                <option value="中電柱">
+                                <option value="NTT長尺柱">
+                                <option value="NTT短尺柱">
+                                <option value="空中分岐">
+                            </datalist>
+                        </td>
+                        <td><input class="srcBefore" listNum="1" source="4" nameid="FacilityNumber" type="text" onfocus="this.select();" name="utility_poles_number"></td> <!-- 中電柱番号 -->
+                        <td><input class="srcBefore" listNum="1" source="4" nameid="FacilitySpan" type="number" onfocus="this.select();" name="span" placeholder="m"></td> <!-- 径間 -->
+                        <!-- 線下状況 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="4" nameid="FacilityStatus" type="text" onfocus="this.select();" name="line_status" list="line_status">
+                            <datalist name="line_status" id="line_status">
+                                <option value="民地">
+                                <option value="道路">
+                                <option value="歩道">
+                                <option value="歩道橋">
+                                <option value="鉄道横断">
+                                <option value="道路横断">
+                            </datalist>
+                        </td>
+                        <td><input class="srcBefore" listNum="1" source="4" nameid="SourceAngleBefore" type="number" onfocus="this.select();" name="angle"></td> <!-- 通信元との角度 -->
+                        <!-- 外径 吊線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="4" nameid="OuterDiameterSuspension" type="text" onfocus="this.select();" name="outer_suspension" list="outer_suspension" placeholder="mm">
+                            <datalist name="outer_suspension" id="outer_suspension">
+                                <option value="3.6mm">
+                                <option value="6.9mm">
+                                <option value="1.6mm">
+                                <option value="1.2mm">
+                                <option value="7.6mm">
+                                <option value="10.0mm">
+                                <option value="15.3mm">
+                                <option value="2.0mm">
+                                <option value="8.5mm">
+                            </datalist>
+                        </td>
+                        <!-- 外径 通信線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="4" nameid="OuterDiameterLine" type="text" onfocus="this.select();" name="outer_communication" list="outer_communication" placeholder="mm">
+                            <datalist name="outer_communication" id="outer_communication">
+                                <option value="3.6mm">
+                                <option value="6.9mm">
+                                <option value="1.6mm">
+                                <option value="1.2mm">
+                                <option value="7.6mm">
+                                <option value="10.0mm">
+                                <option value="15.3mm">
+                                <option value="2.0mm">
+                                <option value="8.5mm">
+                            </datalist>
+                        </td>
+                        <!-- 自重 吊線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="4" nameid="OwnWeightSuspention" type="text" onfocus="this.select();" name="one_weight_suspension" list="one_weight_suspension" placeholder="kg/m">
+                            <datalist name="one_weight_suspension" id="one_weight_suspension">
+                                <option value="0.062kg/m">
+                                <option value="0.23kg/m">
+                                <option value="0.03kg/m">
+                                <option value="0.01kg/m">
+                                <option value="0.082kg/m">
+                                <option value="0.165kg/m">
+                                <option value="0.2kg/m">
+                                <option value="0.02kg/m">
+                                <option value="0.065kg/m">
+                            </datalist>
+                        </td>
+                        <!-- 自重 通信線 -->
+                        <td>
+                            <input class="srcBefore" listNum="1" source="4" nameid="OwnWeightLine" type="text" onfocus="this.select();" name="one_weight_communication" list="one_weight_communication" placeholder="kg/m">
+                            <datalist name="one_weight_communication" id="one_weight_communication">
+                                <option value="0.062kg/m">
+                                <option value="0.23kg/m">
+                                <option value="0.03kg/m">
+                                <option value="0.01kg/m">
+                                <option value="0.082kg/m">
+                                <option value="0.165kg/m">
+                                <option value="0.2kg/m">
+                                <option value="0.02kg/m">
+                                <option value="0.065kg/m">
+                            </datalist>
+                        </td>
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="4" nameid="LineLength" type="number" onfocus="this.select();" name="communication" placeholder="mm"></td> <!-- 通信線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="4" nameid="SpanDistanceLineL" type="number" onfocus="this.select();" name="low_volt" placeholder="/m"></td> <!-- 低圧線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="4" nameid="SpanDistanceLinePower" type="number" onfocus="this.select();" name="service_line" placeholder="m"></td> <!-- 電力引込線 -->
+                        <td class="lightBlue"><input class="srcAfter" listNum="1" source="4" nameid="SourceAngleAfter" type="number" onfocus="this.select();" name="angle" placeholder="度"></td> <!-- 通信元との角度 -->
+                    </tr>
+                </table>
+            </div>
+            <!-- 4.施設形態 -->
+            <!-- 5.槍出し金具の使用 -->
+            <div class="spear_out box">
+                <div class="title">5.槍出し金具の使用</div>
+                <div class="content">
+                    <table class="table spear_table">
+                        <tr>
+                            <th>使用の有無</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="before" listNum="1" nameid="MetalFitting" name="existence" id="existence">
+                                    <option value=""></option>
+                                    <option value="有">有</option>
+                                    <option value="無">無</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="content">
+                    <p class="arrow">→</p>
+                </div>
+                <div class="content">
+                    <p>※使用する理由</p>
+                    <p class="reason">[<input class="before" listNum="1" nameid="MetalFittingText" type="text" onfocus="this.select();" name="reason">]</p>
+                </div>
+            </div>
+            <!-- 5.槍出し金具の使用 -->
+            <!-- 6.開閉器操作紐の移設 -->
+            <div class="transfer box">
+                <div class="title">6.開閉器操作紐の移設</div>
+                <div class="content">
+                    <table class="table transfer_table">
+                        <tr>
+                            <th>移設の要否</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="before non-existence" listNum="1" nameid="Switch" name="existence" id="existence">
+                                    <option value=""></option>
+                                    <option value="要">要</option>
+                                    <option value="否">否</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="content attention">
+                    <p><small>※最終判断は中電<br>にて実施する</small></p>
+                </div>
+            </div>
+            <!-- 6.開閉器操作紐の移設 -->
+            <!-- 特記事項 -->
+            <div class="report">
+                <table class="table report_table">
+                    <tr>
+                        <th>【特記事項】（配電設備の改修要望内容・しゅん工事の変更理由）</th>
+                    </tr>
+                    <tr>
+                        <td><input class="before" listNum="1" nameid="Remark" type="text" onfocus="this.select();" name="report"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 特記事項 -->
+            <!-- 写真 -->
+            <div class="film">
+                <!-- 工事前撮影 -->
+                <div class="filming box">
+                    <table class="table film_table">
+                        <tr>
+                            <th class="film_days">撮影日</th>
+                            <th class="days date" colspan="2">
+                                令和
+                                <input class="beforePhoto" listNum="1" num="1" type="number" onfocus="this.select();" name="year">年
+                                <input class="beforePhoto" listNum="1" num="2" type="number" onfocus="this.select();" name="month">月
+                                <input class="beforePhoto" listNum="1" num="3" type="number" onfocus="this.select();" name="date">日
+                            </th>
+                            <th>
+                                <div class="imgSelect" listNum = "1" mode="0">工事前写真</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="photoBefore" colspan="4">
+                                <img src="../img/img.jpg"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 工事後撮影 -->
+                <div class="after_filming box">
+                    <table class="table after_filming_table">
+                        <tr>
+                            <th class="after_filming_days">しゅん工日</th>
+                            <th class="days" colspan="2">
+                                令和
+                                <input class="afterPhoto" listNum="1" num="1" type="number" onfocus="this.select();" name="year">年
+                                <input class="afterPhoto" listNum="1" num="2" type="number" onfocus="this.select();" name="month">月
+                                <input class="afterPhoto" listNum="1" num="3" type="number" onfocus="this.select();" name="date">日
+                            </th>
+                            <th>
+                                <div class="imgSelect" listNum="1" mode="1">工事後写真</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="photoAfter" colspan="4">
+                                <img src="../img/img.jpg"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- 写真 -->
+            <!-- 技術検討結果 -->
+            <div class="research">
+                <div class="title">【技術検討結果（中電記入）】</div>
+                <table class="table research_table">
+                    <tr>
+                        <th>調査</th>
+                        <th>実施日</th>
+                        <th>共架可否</th>
+                        <th>改修工事要否</th>
+                        <th>改修工事内容</th>
+                    </tr>
+                    <tr>
+                        <th>机上調査</th>
+                        <td class="days">
+                            令和
+                            <input class="chudenOffice" listNum="1" num="1" type="number" onfocus="this.select();" name="year">年
+                            <input class="chudenOffice" listNum="1" num="2" type="number" onfocus="this.select();" name="month">月
+                            <input class="chudenOffice" listNum="1" num="3" type="number" onfocus="this.select();" name="date">日
+                        </td>
+                        <!--共架可否-->
+                        <td>
+                            <select class="chudenSelect" listNum="1" nameid="OfficeJointPropriety" name="propriety">
+                                <option value=""></option>
+                                <option value="可">可</option>
+                                <option value="可">不可</option>
+                                <option value="可">不明</option>
+                            </select>
+                        </td>
+                        <!--改修工事要否-->
+                        <td>
+                            <select class="chudenSelect" listNum="1" nameid="OfficeRepairPropriety" name="necessity">
+                                <option value=""></option>
+                                <option value="不要">不要</option>
+                                <option value="要">要</option>
+                                <option value="不可">不可</option>
+                            </select>
+                        </td>
+                        <td rowspan="4">
+                            <div class="detail">
+                                <div class="checkbox">
+                                    <input class="chudenCheck" listNum="1" nameid="RepairContents1" type="checkbox" name="" id="">本柱建替
+                                </div>
+                                <div class="checkbox">
+                                    <input class="chudenCheck" listNum="1" nameid="RepairContents2" type="checkbox" name="" id="">支線新設・移設
+                                </div>
+                                <div class="checkbox">
+                                    <input class="chudenCheck" listNum="1" nameid="RepairContents3" type="checkbox" name="" id="">変圧器２次リード改修
+                                </div>
+                                <div class="checkbox">
+                                    <input class="chudenCheck" listNum="1" nameid="RepairContents4" type="checkbox" name="" id="">変圧器移設
+                                </div>
+                                <div class="checkbox">
+                                    <input class="chudenCheck" listNum="1" nameid="RepairContents5" type="checkbox" name="" id="">電線移設(高圧・低圧)
+                                </div>
+                                <div class="checkbox">
+                                    <input class="chudenCheck" listNum="1" nameid="RepairContents6" type="checkbox" name="" id="">引込線変更
+                                </div>
+                                <div class="checkbox">
+                                    <input class="chudenCheck" listNum="1" nameid="RepairContents7" type="checkbox" name="" id="">開閉器操作紐移設
+                                </div>
+                                <div class="checkbox">
+                                    <div class="other">
+                                        <input class="chudenCheck" listNum="1" nameid="RepairContents8" type="checkbox" name="" id="other2">
+                                        その他[
+                                        <input class="chuden" listNum="1" nameid="RepairRemark" type="text" onfocus="this.select();" name="other_text2" id="other_text2">
+                                        ]
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>現場調査</th>
+                        <td class="days">
+                            令和
+                            <input class="chudenField" listNum="1" num="1" type="number" onfocus="this.select();" name="year">年
+                            <input class="chudenField" listNum="1" num="2" type="number" onfocus="this.select();" name="month">月
+                            <input class="chudenField" listNum="1" num="3" type="number" onfocus="this.select();" name="date">日
+                        </td>
+                        <!--共架可否-->
+                        <td>
+                            <select class="chudenSelect" listNum="1" nameid="FieldJointPropriety" name="propriety">
+                                <option value=""></option>
+                                <option value="可">可</option>
+                                <option value="可">不可</option>
+                                <option value="可">不明</option>
+                            </select>
+                        </td>
+                        <!--改修工事要否-->
+                        <td>
+                            <select class="chudenSelect" listNum="1" nameid="FieldRepairPropriety" name="necessity">
+                                <option value=""></option>
+                                <option value="不要">不要</option>
+                                <option value="要">要</option>
+                                <option value="不可">不可</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="4">共架可の条件</th>
+                    </tr>
+                    <tr class="condition">
+                        <td colspan="4">
+                            <div class="checkbox conditionLeft">
+                                <input class="chudenCheck" listNum="1" nameid="JointTerms1" type="checkbox" name="" id="">条件なし
+                            </div>
+                            <div class="checkbox conditionLeft">
+                                <input class="chudenCheck" listNum="1" nameid="JointTerms2" type="checkbox" name="" id="">一束化
+                            </div>
+                            <div class="checkbox conditionClear conditionLeft">
+                                <div class="tensile_load">
+                                    <input class="chudenCheck" listNum="1" nameid="JointTerms3" type="checkbox" name="" id="">
+                                    引張荷重[
+                                    <input class="chuden" listNum="1" nameid="JointTermsWeight" type="text" onfocus="this.select();" class="tensile" id="tensile">
+                                    kN]以下
+                                </div>
+                            </div>
+                            <div class="checkbox conditionLeft">
+                                <input class="chudenCheck" listNum="1" nameid="JointTerms4" type="checkbox" name="" id="">当社設備改修
+                            </div>
+                            <div class="checkbox conditionClear conditionLeft">
+                                <input class="chudenCheck" listNum="1" nameid="JointTerms5" type="checkbox" name="" id="">他社設備改修
+                            </div>
+                            <div class="checkbox conditionLeft">
+                                <div class="expandSpan">
+                                    <input class="chudenCheck" listNum="1" nameid="JointTerms6" type="checkbox" name="" id="">共同支線の施設[
+                                    <input class="chuden" listNum="1" nameid="JointTermsExtention" type="text" onfocus="this.select();" name="expandSpan" id="expandSpan">]径間延長
+                                </div>
+                            </div>
+                            <div class="checkbox conditionClear">
+                                <div class="other">
+                                    <input class="chudenCheck" listNum="1" nameid="JointTerms7" type="checkbox" name="other_checkbox" id="other_checkbox">
+                                    その他[
+                                    <input class="chuden" listNum="1" nameid="JointTermsRemark" type="text" onfocus="this.select();" name="other_text" id="other_text">
+                                    ]
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="4">共架不可理由</th>
+                        <th>改修工事完工日</th>
+                    </tr>
+                    <tr class="reason">
+                        <td colspan="4"><input class="chuden" listNum="1" nameid="ImpossibleReason" type="text" onfocus="this.select();" name="impossible_reason" class="impossible_reason"></td>
+                        <td class="days">
+                            令和
+                            <input class="chudenRepair" listNum="1" num="1" type="number" onfocus="this.select();" name="year">年
+                            <input class="chudenRepair" listNum="1" num="2" type="number" onfocus="this.select();" name="month">月
+                            <input class="chudenRepair" listNum="1" num="3" type="number" onfocus="this.select();" name="date">日
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 技術検討結果 -->
+            <!-- 施設確認 -->
+            <div class="confirm">
+                <div class="title">【施設確認（電柱記入）】</div>
+                <table class="table confirm_table">
+                    <tr>
+                        <th></th>
+                        <th>実施日</th>
+                        <th>施設確認結果</th>
+                        <th class="nonconformity">＜不適合理由＞</th>
+                        <th>改修期限</th>
+                    </tr>
+                    <tr>
+                        <th>しゅん工後</th>
+                        <td class="days">
+                            <input class="chudenAfterCompletion" listNum="1" num="1" type="number" onfocus="this.select();" name="year">年
+                            <input class="chudenAfterCompletion" listNum="1" num="2" type="number" onfocus="this.select();" name="month">月
+                            <input class="chudenAfterCompletion" listNum="1" num="3" type="number" onfocus="this.select();" name="date">日
+                        </td>
+                        <td>
+                            <select class="chudenSelect" listNum="1" nameid="AfterCheckResult" name="result">
+                                <option value=""></option>
+                                <option value="適">適</option>
+                                <option value="不適">不適</option>
+                            </select>
+                        </td>
+                        <td><input class="chuden nonconformity" listNum="1" nameid="AfterNote" type="text" onfocus="this.select();" name="nonconformity"></td>
+                        <td class="days">
+                            <input class="chudenAfterDeadine" listNum="1" num="1" type="number" onfocus="this.select();" name="year">年
+                            <input class="chudenAfterDeadine" listNum="1" num="2" type="number" onfocus="this.select();" name="month">月
+                            <input class="chudenAfterDeadine" listNum="1" num="3" type="number" onfocus="this.select();" name="date">日
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>不適箇所の改修工事後</th>
+                        <td class="days">
+                            <input class="chudenInadequate" listNum="1" num="1" type="number" onfocus="this.select();" name="year">年
+                            <input class="chudenInadequate" listNum="1" num="2" type="number" onfocus="this.select();" name="month">月
+                            <input class="chudenInadequate" listNum="1" num="3" type="number" onfocus="this.select();" name="date">日
+                        </td>
+                        <td>
+                            <select class="chudenSelect" listNum="1" nameid="InadequateResult" name="result">
+                                <option value=""></option>
+                                <option value="適">適</option>
+                                <option value="不適">不適</option>
+                            </select>
+                        </td>
+                        <td><input class="chuden nonconformity" listNum="1" nameid="InadequateNote" type="text" onfocus="this.select();" name="nonconformity"></td>
+                        <td class="days">
+                            <input class="chudenInadequateDeadline" listNum="1" num="1" type="number" onfocus="this.select();" name="year">年
+                            <input class="chudenInadequateDeadline" listNum="1" num="2" type="number" onfocus="this.select();" name="month">月
+                            <input class="chudenInadequateDeadline" listNum="1" num="3" type="number" onfocus="this.select();" name="date">日
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 施設確認 -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- main -->
+    
+    
+    <!-- Simple pop-up dialog box containing a form -->
+    <dialog id="selectDialog">
+        <form method="dialog">
+            <p>
+                <label>写真の選択:
+                <select id="selectItems"></select>
+                </label>
+            </p>
+            <menu>
+                <button id="btCancel">Cancel</button>
+                <button id="btOK">OK</button>
+            </menu>
+        </form>
+    </dialog>
+    <output></output>
+</body>
+<script src="../scripts/jquery-1.12.4.js"></script>
+<script src="completion.js"></script>
+<script src="../scripts/util.js"></script>
+<script src="../scripts/dialog-polyfill.js"></script>
+
+</html>

@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+body {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";
+}
+
+.time {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.main {
+/*    margin: 0 100px;*/
+    margin-top: 120px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.box {
+    margin: 20px;
+    padding: 10px;
+    width: 450px;
+    height: 85px;
+    border: gray solid 1px;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center;
+    line-height: 5px;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+}
+.box a {
+    text-decoration: none;
+    color: white;
+}
+
+.fieldBook {
+    background: skyblue;
+}
+.complationList {
+    background: orange;
+}
+
+.notice {
+    color: red;
+}

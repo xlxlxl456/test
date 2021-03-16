@@ -1,0 +1,51 @@
+{
+  "WorkName": "2019作業A",
+  "OutputDate": "2019-10-24 07:14:53",
+  "Maps": [
+    {
+      "id": 1,
+      "MapName": "01_地図/現場案内図（小規模件名）_01",
+      "MapFile": "01_地図/現場案内図（小規模件名）_01.jpg",
+      "MapRemark": "A県A市AAA",
+      "Drawings": [
+        {
+          "id": 1,
+          "SSMH_Name": "マンホールA-01",
+          "DrawingName": "MH-A-01",
+          "DrawingFile": "01_地図/現場案内図（小規模件名）_01/洞道MH図_01.jpg",
+          "DrawingRemark": "マンホールA-01",
+          "Status": "",
+          "Points": []
+        },
+        {
+          "id": 2,
+          "SSMH_Name": "マンホールB-01",
+          "DrawingName": "MH-B-01",
+          "DrawingFile": "01_地図/現場案内図（小規模件名）_01/洞道内ケーブルレイアウト図_01.jpg",
+          "DrawingRemark": "マンホールB-01",
+          "Status": "",
+          "Points": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "MapName": "01_地図/現場案内図（大規模件名）_01",
+      "MapFile": "01_地図/現場案内図（大規模件名）_01.jpg",
+      "MapRemark": "B県B市BBB",
+      "Drawings": [
+        {
+          "id": 1,
+          "SSMH_Name": "サブステーションA-01",
+          "DrawingName": "SS-A-01",
+          "DrawingFile": "01_地図/現場案内図（大規模件名）_01/管路MH図_01.jpg",
+          "DrawingRemark": "サブステーションA-01",
+          "Status": "",
+          "Points": []
+        }
+      ]
+    }
+  ],
+  "VersionInfoT": "20191024",
+  "VersionInfoS": "1.0.0.1"
+}

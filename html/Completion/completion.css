@@ -1,0 +1,382 @@
+@charset "utf-8";
+
+body {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";
+}
+
+.table {
+    border-collapse: collapse;
+    margin-top: 0;
+    border: 1px solid black;
+}
+.table th,
+.table td {
+    text-align: center;
+    border: 1px solid black;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input {
+    text-align: center;
+    border: none;
+}
+select {
+    -webkit-appearance: none;
+    border: none;
+}
+
+.box {
+    float: left;
+}
+
+.lightBlue,
+.lightBlue input {
+    background: #daeef3;
+}
+
+.darkGray {
+    background: #808080;
+    color: blue;
+}
+
+/* ---------------- Header ---------------- */
+header {
+    float: left;
+}
+.saveButton {
+    margin: 10px 10px 0 20px;
+}
+.listButton {
+    margin-right: 10px;
+}
+.reload {
+    margin-right: 10px;
+}
+.show_num {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 24px;
+}
+.header h1{
+    text-decoration: none;
+    color: white;
+}
+.menu_button {
+    display: inline-block;
+    width: 175px;
+    height: 40px;
+    line-height: 3px;
+    font-size: 14px;
+    text-align: center;
+    background-color:#58ACFA;
+    border: gray 1px solid;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav {
+    clear: both;
+    margin: 20px 10px 10px 10px;
+}
+.nav_title {
+    margin-right: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.nav_tb {
+    border-collapse: collapse;
+}
+.nav_tb th,
+.nav_tb td {
+    border: 1px solid black;
+    border-width: 3px;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+}
+.nav_tb input {
+}
+.nav_tb select {
+}
+/* ---------------- Header ---------------- */
+
+/* ---------------- Main ---------------- */
+
+.main {
+    clear: both;
+/*    padding: 10px 50px;*/
+}
+.container {
+    border: 1px solid black;
+    width: 980px;
+/*    width: auto;*/
+/*    height: 100%;*/
+    padding: 10px;
+}
+.title {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* 1. 配電設備の施設状況 */
+.facility_status {
+    margin-right: 15px;
+}
+.facility_table th {
+    font-size: 12px;
+}
+.facility_table th,
+.facility_table td {
+    width: 60px;
+}
+.facility_table input {
+    width: 60px;
+    height: 50px;
+}
+.facility_table select {
+    height: 50px;
+}
+
+/* 2. 共架施設状況と希望位置 */
+.status {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.existing_colleague_table th {
+    font-size: 12px;
+}
+.existing_colleague_table input[list] {
+    width: 80px;
+}
+
+.content {
+   float: left;
+}
+.content p {
+    margin: 0px 10px;
+}
+.content input {
+    width: 20px;
+    text-align: left;
+}
+.content select {
+    height: 20px;
+}
+.named input {
+    width: 150px;
+}
+
+/* 3. 共架位置と測定結果 */
+
+.isolation_table th {
+    font-size: 12px;
+}
+.isolation_table th,
+.isolation_table td,
+.isolation_table input {
+    width: 70px;
+}
+
+/* 4. 施設形態 */
+.facility_type {
+    clear: both;
+    margin-bottom: 15px;
+}
+.record {
+    font-weight: bold;
+    float: left;
+}
+.record_title {
+    font-weight: bold;
+    margin-left: 700px;
+}
+
+.facility_type_table th,
+.facility_type_table td {
+    font-size: 12px;
+    width: 55px;
+}
+.facility_type_table input {
+    width: 55px;
+    height: 40px;
+}
+.facility_type_table select {
+    width: 55px;
+    height: 40px;
+}
+
+/* 5.槍出し金具の使用 */
+.spear_out {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.spear_table th,
+.spear_table td {
+    width: 80px;
+    font-size: 12px;
+}
+.spear_table select {
+    width: 80px;
+    height: 30px;
+}
+.spear_out .content .arrow {
+    margin: 18px 10px;
+}
+.reason input{
+    width: 150px;
+}
+
+/* 6.開閉器操作紐の移設 */
+
+.transfer {
+    margin-right: 15px;
+}
+.transfer_table th,
+.transfer_table td {
+    width: 80px;
+    font-size: 12px;
+}
+.transfer_table select {
+    width: 80px;
+    height: 30px;
+}
+.attention {
+    margin-left: 10px;
+}
+
+/* 特記事項 */
+
+.report_table th,
+.report_table td {
+    font-size: 12px;
+    width: 360px;
+}
+.report_table input {
+    width: 360px;
+    height: 30px;
+    text-align: left;
+}
+
+/* 工事前写真 */
+/* 工事後写真 */
+
+.film {
+    clear: both;
+}
+.filming {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.filming img,
+.after_filming img {
+    width: 460px;
+    height: auto;
+}
+
+.film_table th,
+.film_table td,
+.after_filming_table th,
+.after_filming_table td {
+    font-size: 12px;
+    width: 120px;
+}
+
+.days {
+    font-size: 12px;
+    font-weight: bold;
+}
+.days input {
+    width: 15px;
+}
+
+/* 【技術検討結果（中電記入）】 */
+
+.research {
+    clear: both;
+}
+.research .days input {
+    width: 15px;
+}
+
+.research_table th {
+    font-size: 12px;
+    width: 170px;
+}
+.research_table td {
+    width: 170px;
+}
+
+.detail {
+    width: 260px;
+/*    margin: 0px;*/
+}
+
+.detail .checkbox {
+    text-align: left;
+    width: 250px;
+    margin: 0px;
+}
+.condition .checkbox {
+    text-align: left;
+    width: 300px;
+    margin: 0px;
+}
+.condition .other {
+    width: 500px;
+}
+
+.conditionLeft {
+    float: left;
+}
+.conditionClear {
+    clear: both;
+}
+
+.tensile_load #tensile,
+.expandSpan #expandSpan {
+    margin: 0px;
+    width: 50px;
+}
+.other #other_text {
+    margin: 0px;
+    width: 350px;
+}
+.other #other_text2 {
+    margin: 0px;
+    width: 140px;
+}
+
+.research_table .reason input {
+    width: 600px;
+    height: 25px;
+}
+.research_table .days input {
+    width: 15px;
+}
+
+/* 共架不可理由 */
+
+.confirm {
+    margin: 10px 0;
+}
+.confirm_table th {
+    font-size: 12px;
+    width: 160px;
+}
+.confirm_table td {
+    width: 160px;
+}
+.confirm_table .days input {
+    width: 15px;
+}
+.confirm .nonconformity {
+    width: 290px;
+}
+
+/* ---------------- Main ---------------- */
